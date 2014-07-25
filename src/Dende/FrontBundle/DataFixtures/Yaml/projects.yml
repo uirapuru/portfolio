@@ -1,0 +1,274 @@
+movablemedia:
+    name: movablemedia.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+episodesconnect:
+    name: episodesconnect.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+piwikpro:
+    name: piwik.pro
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+pennysaverusa:
+    name: pennysaverusa.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+cookie.com.pl:
+    name: movablemedia.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+sallyyumeno.com:
+    name: movablemedia.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+thomascloud:
+    name: thomascloudofficial.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+toromedia:
+    name: toromedia.pl
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+capoeiraapelido:
+    name: capoeiraapelido.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+portuga:
+    name: portuga.pl
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+gyman:
+    name: gyman.pl
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+drascar:
+    name: drascar.pl
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+lukasautohandel:
+    name: lukasautohandel.de
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+mmanews:
+    name: mmanews.pl
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+takedown:
+    name: takedown.pl
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+        
+docloud:
+    name: docloud.pl
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+studdin:
+    name: studdin.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - feature one
+        - feature two
+        - feature three
+    tags:
+        - Symfony 1.4
+        - jQuery
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+        

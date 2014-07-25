@@ -1,210 +1,204 @@
 {% extends "FrontBundle::layout.html.twig" %}
 
 {% block body %}
-      <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    {{ parent() }}
 
-        <div id="headerBg">
-            <div class="container" id="topInfo">
-                <div class="row">
-                    <div class="span6" id="logo">
-                        <h1>uirapu.ru</h1>
-                    </div>
-                    <div class="span6" id="infoBar">
-                        mail: <a href="mailto:uirapuru@tlen.pl">uirapuru@tlen.pl</a> gsm: <a href="#">604 411 089</a><br />
-                        fb: <a href="https://www.facebook.com/grzegorz.kaszuba">/grzegorz.kaszuba</a> github: <a href="http://github.com/uirapuru">/uirapuru</a>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="span12" id="mainFoto">
-                        <h1>Grzegorz Kaszuba</h1>
-                        <h3>webdeveloper & martial artist</h3>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <ul class="col-md-6" id="skillsList">
+            <li class="label label-danger">PHP 5.5</li>
+            <li class="label label-danger">Javascript</li>
+
+            <li class="label label-info">Symfony1</li>
+            <li class="label label-info">Symfony2</li>
+            <li class="label label-info">Silex</li>
+            <li class="label label-info">ZendFramework 1</li>
+            <li class="label label-info">Kohana</li>
+            <li class="label label-info">PHPUnit</li>
+            
+            <li class="label label-warning">MySQL</li>
+            <li class="label label-warning">PostgreSQL</li>
+            <li class="label label-warning">MongoDB</li>
+
+            <li class="label label-default">HTML5</li>
+            <li class="label label-default">CSS3</li>
+
+            <li class="label label-info">Twig</li>
+            <li class="label label-info">Smarty</li>
+
+            <li class="label label-success">JQuery</li>
+            <li class="label label-success">AngularJS</li>
+
+            <li class="label label-primary">GIT</li>
+            <li class="label label-primary">Subversion</li>
+
+            <li class="label label-default">Redmine</li>
+            <li class="label label-default">Jira</li>
+
+            <li class="label label-success">Jenkins CI</li>
+            <li class="label label-success">Apache</li>
+            <li class="label label-success">Linux</li>
+        </ul>
+        <div class="col-md-6">
+            <a href="http://www.zend.com/en/store/education/certification/yellow-pages.php#show-ClientCandidateID=ZEND025464" class="pull-right">
+                <img src="http://www.zend.com/training-images/logos/zce-php-engineer-logo-l.jpg" style="height: 120px;"/>
+            </a>
         </div>
+    </div>
 
-
-        <div class="container">
-            <div class="row" id="soft">
-                <div class="span12">
-                    <img src="img/php.png" alt="PHP" />
-                    <img src="img/javascript.png" alt="JS" />
-                    <img src="img/html5.png" alt="HTML5" />
-                    <img src="img/css3.png" alt="CSS3" />
-                    <img src="img/mysql.png" alt="MySQL" />
-                    <img src="img/jquery.png" alt="jQuery" />
-                    <img src="img/ubuntu.png" alt="Ubuntu" />
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="span6 aboutList" id="experience">
-                    <h3>Doświadczenie <span class="showmore"><input type="checkbox" ng-model="otherjobs">&nbsp;więcej</span></h3> 
+    <div class="container">
+        <div class="col-md-6 aboutList" id="experience">
+            <h3>Doświadczenie <span class="showmore"><input type="checkbox" ng-model="otherjobs">&nbsp;więcej</span></h3> 
+            <div class="clearfix"></div>
+            <ul id="exp">
+                <li>
+                    <strong>Clearcode.cc</strong><br />
+                    <span class="date">II.2012 - chwila obecna</span>
+                    <span class="occupation">(web developer)</span>
                     <div class="clearfix"></div>
-                    <ul id="exp">
-                        <li>
-                            <strong>Clearcode.cc</strong><br />
-                            <span class="date">II.2012 - chwila obecna</span>
-                            <span class="occupation">(web developer)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li>
-                            <strong>Dende</strong><br />
-                            <span class="date">V.2011 -  chwila obecna</span>
-                            <span class="occupation"> (web developer)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li>
-                            <strong>Redefine sp. z o.o.</strong><br />
-                            <span class="date">IV.2010 - IX.2011</span>
-                            <span class="occupation"> (web developer)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs">
-                            <strong>BodyPerfect sp. z o.o.</strong><br />
-                            <span class="date">XII.2009 - XI.2010</span>
-                            <span class="occupation"> (trener personalny)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs">
-                            <strong>Klub Sportowy Capoeira w Olsztynie</strong><br />
-                            <span class="date">XII.2007 - chwila obecna</span>
-                            <span class="occupation"> (prezes klubu oraz instruktor capoeira)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs">
-                            <strong>C. Hartwig Gdynia</strong><br />
-                            <span class="date">X.2006 - III.2006</span>
-                            <span class="occupation"> (pomocnik magazyniera)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs">
-                            <strong>Carnival Arts Center - Glasgow (UK)</strong><br />
-                            <span class="date">VI.2006 - IX.2006</span>
-                            <span class="occupation"> (konserwator oraz pomocnik barmana)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs">
-                            <strong>Agencja reklamowa YellowPoint</strong><br />
-                            <span class="date">X.2004 - VI.2006</span>
-                            <span class="occupation"> (obsługa plotera, webdesign, prace manualne)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs">
-                            <strong>Biuro Turystyki Aktywnej Kompas</strong><br />
-                            <span class="date">VII.2004 - VIII.2009</span>
-                            <span class="occupation"> (wychowawca kolonijny, obozy survival oraz militarne, instruktor samoobrony, team-building)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs">
-                            <strong>TOMnet - kawiarenka internetowa/pub</strong><br />
-                            <span class="date">IX.2002 - XI.2004</span>
-                            <span class="occupation"> (administrator, obsługa klientów)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs">
-                            <strong>Gdyński Ośrodek Sportu i Rekreacji</strong><br />
-                            <span class="date">VI.2003 - XI.2004</span>
-                            <span class="occupation"> (pracownik fizyczny)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                        <li class="otherjobs" ng-show="otherjobs" ng-hide="noIt = false">
-                            <strong>AK-art</strong><br />
-                            <span class="date">VI.2003 - VIII.2003</span>
-                            <span class="occupation"> (pracownik fizyczny, nagłośnienie imprez masowych)</span>
-                            <div class="clearfix"></div>
-                        </li>                            
-                    </ul>
-                </div>
-                <div class="span6 aboutList rightColumn">
-                    <h3>Edukacja</h3>
-                    <ul>
-                        <li>
-                            <strong>Uniwersytet Warmińsko-Mazurski</strong><br />
-                            X.2008 - VI.2011 (inżynieria systemów informatycznych)
-                        </li>                            
-                        <li>
-                            <strong>Politechnika Gdańska</strong><br />
-                            2005 - 2007 (informatyka)
-                        </li>                            
-                        <li>
-                            <strong>Studium informatyczne Żak</strong><br />
-                            2003 - 2005 (technik informatyk)
-                        </li>                            
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span6 aboutList">
-                    <h3>Zainteresowania</h3>
-                    <ul>
-                        <li>
-                            <h4>Capoeira <span class="showmore"><input type="checkbox" ng-model="capoeira">&nbsp;więcej</span></h4>
-                            <div class="clearfix"></div>
-                            <p ng-show="capoeira">uprawiam ją czynnie od września 2000 roku, obecnie posiadam stopień Graduado w grupie Capoeira Camangula.
-                                Uczestnik krajowych oraz międzynarodowych wydarzeń związanych z capoeira, przez 5 lat prowadziłem zajęcia
-                                jako instruktor w założonym przez siebie Klubie Sportowym Capoeira w Olsztynie, który na chwilę obecną jest
-                                już samodzielnie działającym klubem.</p>
-                        </li>                            
-                        <li>
-                            <h4>Brazylijskie Jiu Jitsu <span class="showmore"><input type="checkbox" ng-model="bjj">&nbsp;więcej</span></h4>
-                            <div class="clearfix"></div>
-                            <p ng-show="bjj">uprawiam je od około 2007 roku. Startuję w amatorskich zawodach na szczeblu regionalnym i krajowym,
-                                przez 2 lata w olsztyńskim Berserkers Team oraz w Rio Grappling Club Wrocław. Do sukcesów należą między
-                                innymi:</p>
-                            <ul ng-show="bjj">
-                                <li>1 miejsce na Mistrzostwach Polski No-Gi (niebieskie pasy)</li>
-                                <li>1 miejsce na Pucharze Polski No-Gi (niebieskie pasy)</li>
-                                <li>2 miejsce na VIII Mistrzostwach Polski (niebieskie pasy)</li>
-                                <li>2 miejsce na XVI lidze BJJ (niebieskie pasy)</li>
-                                <li>2 miejsce na XV lidze BJJ (niebieskie pasy)</li>
-                                <li>2 miejsce na XIV lidze BJJ (białe pasy)</li>
-                                <li>3 miejsce na VI Mistrzostwach Polski (białe pasy)</li>
-                                <li>3 miejsce na X Pucharze Polski (niebieskie pasy)</li>
-                            </ul>
-                        </li>                                                     
-                        <li>
-                            <h4>Survival, militarystyka, turystyka <span class="showmore"><input type="checkbox" ng-model="survival">&nbsp;więcej</span></h4>
-                            <div class="clearfix"></div>
-                            <p ng-show="survival">Uprawnienia IRR instruktora survival a także samoobrona. Doświadczenie w pracy jako wychowawca kolonijny.</p>
-                        </li>                                                     
-                    </ul>
-                </div>
-                <div class="span6 aboutList rightColumn">
-                    <h3>Języki obce</h3>
-                    <ul>
-                        <li>
-                            <strong>język angielski</strong><br />
-                            w stopniu komunikatywnym
-                        </li>                            
-                        <li>
-                            <strong>język portugalski (w. brazylijska)</strong><br />
-                            w stopniu podstawowym
-                        </li>                            
-                    </ul>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="span12" id="projects">
-                        <h3>Projekty</h3>
-                        <ul class="inline thumbnails">
-                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
-                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
-                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
-                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
-                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
-                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
-                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                </li>                            
+                <li>
+                    <strong>Dende</strong><br />
+                    <span class="date">V.2011 -  chwila obecna</span>
+                    <span class="occupation"> (web developer)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li>
+                    <strong>Studdin.com && docloud.pl</strong><br />
+                    <span class="date">IX.2012 - VI.2014</span>
+                    <span class="occupation"> (senior developer)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li>
+                    <strong>Redefine sp. z o.o.</strong><br />
+                    <span class="date">IV.2010 - IX.2011</span>
+                    <span class="occupation"> (web developer)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>BodyPerfect sp. z o.o.</strong><br />
+                    <span class="date">XII.2009 - XI.2010</span>
+                    <span class="occupation"> (trener personalny)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>Klub Sportowy Capoeira w Olsztynie</strong><br />
+                    <span class="date">XII.2007 - chwila obecna</span>
+                    <span class="occupation"> (prezes klubu oraz instruktor capoeira)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>C. Hartwig Gdynia</strong><br />
+                    <span class="date">X.2006 - III.2006</span>
+                    <span class="occupation"> (pomocnik magazyniera)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>Carnival Arts Center - Glasgow (UK)</strong><br />
+                    <span class="date">VI.2006 - IX.2006</span>
+                    <span class="occupation"> (konserwator oraz pomocnik barmana)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>Agencja reklamowa YellowPoint</strong><br />
+                    <span class="date">X.2004 - VI.2006</span>
+                    <span class="occupation"> (obsługa plotera, webdesign, prace manualne)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>Biuro Turystyki Aktywnej Kompas</strong><br />
+                    <span class="date">VII.2004 - VIII.2009</span>
+                    <span class="occupation"> (wychowawca kolonijny, obozy survival oraz militarne, instruktor samoobrony, team-building)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>TOMnet - kawiarenka internetowa/pub</strong><br />
+                    <span class="date">IX.2002 - XI.2004</span>
+                    <span class="occupation"> (administrator, obsługa klientów)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>Gdyński Ośrodek Sportu i Rekreacji</strong><br />
+                    <span class="date">VI.2003 - XI.2004</span>
+                    <span class="occupation"> (pracownik fizyczny)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li class="otherjobs" ng-show="otherjobs">
+                    <strong>AK-art</strong><br />
+                    <span class="date">VI.2003 - VIII.2003</span>
+                    <span class="occupation"> (pracownik fizyczny, nagłośnienie imprez masowych)</span>
+                    <div class="clearfix"></div>
+                </li>                            
+            </ul>
         </div>
+        <div class="col-md-6 aboutList rightColumn">
+            <h3>Edukacja</h3>
+            <ul>
+                <li>
+                    <strong>Uniwersytet Warmińsko-Mazurski</strong><br />
+                    <span class="date">X.2008 - VI.2011</span> <div class="pull-right occupation">(inżynieria systemów informatycznych)</div>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li>
+                    <strong>Politechnika Gdańska</strong><br />
+                    <span class="date">X.2005 - VI.2007</span> <div class="pull-right occupation">(informatyka)</div>
+                    <div class="clearfix"></div>
+                </li>                            
+                <li>
+                    <strong>Studium informatyczne Żak</strong><br />
+                    <span class="date">2003 - 2005</span> <div class="pull-right occupation">(technik informatyk)</div>
+                    <div class="clearfix"></div>
+                </li>                            
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-6 aboutList">
+            <h3>Zainteresowania</h3>
+            <ul>
+                <li>
+                    <h4>Capoeira <span class="showmore"><input type="checkbox" ng-model="capoeira">&nbsp;więcej</span></h4>
+                    <div class="clearfix"></div>
+                    <p ng-show="capoeira">uprawiam ją czynnie od września 2000 roku, obecnie posiadam stopień Graduado w grupie Capoeira Camangula.
+                        Uczestnik krajowych oraz międzynarodowych wydarzeń związanych z capoeira, przez 5 lat prowadziłem zajęcia
+                        jako instruktor w założonym przez siebie Klubie Sportowym Capoeira w Olsztynie, który na chwilę obecną jest
+                        już samodzielnie działającym klubem.</p>
+                </li>                            
+                <li>
+                    <h4>Brazylijskie Jiu Jitsu <span class="showmore"><input type="checkbox" ng-model="bjj">&nbsp;więcej</span></h4>
+                    <div class="clearfix"></div>
+                    <p ng-show="bjj">uprawiam je od około 2007 roku. Startuję w amatorskich zawodach na szczeblu regionalnym i krajowym,
+                        przez 2 lata w olsztyńskim Berserkers Team oraz w Rio Grappling Club Wrocław. Do sukcesów należą między
+                        innymi:</p>
+                    <ul ng-show="bjj">
+                        <li>1 miejsce na Mistrzostwach Polski No-Gi (niebieskie pasy)</li>
+                        <li>1 miejsce na Pucharze Polski No-Gi (niebieskie pasy)</li>
+                        <li>2 miejsce na VIII Mistrzostwach Polski (niebieskie pasy)</li>
+                        <li>2 miejsce na XVI lidze BJJ (niebieskie pasy)</li>
+                        <li>2 miejsce na XV lidze BJJ (niebieskie pasy)</li>
+                        <li>2 miejsce na XIV lidze BJJ (białe pasy)</li>
+                        <li>3 miejsce na VI Mistrzostwach Polski (białe pasy)</li>
+                        <li>3 miejsce na X Pucharze Polski (niebieskie pasy)</li>
+                    </ul>
+                </li>                                                     
+                <li>
+                    <h4>Survival, militarystyka, turystyka <span class="showmore"><input type="checkbox" ng-model="survival">&nbsp;więcej</span></h4>
+                    <div class="clearfix"></div>
+                    <p ng-show="survival">Uprawnienia IRR instruktora survival a także samoobrona. Doświadczenie w pracy jako wychowawca kolonijny.</p>
+                </li>                                                     
+            </ul>
+        </div>
+        <div class="col-md-6 aboutList rightColumn">
+            <h3>Języki obce</h3>
+            <ul>
+                <li>
+                    <strong>język angielski</strong><br />
+                    w stopniu komunikatywnym
+                </li>                            
+                <li>
+                    <strong>język portugalski (w. brazylijska)</strong><br />
+                    w stopniu podstawowym
+                </li>                            
+            </ul>
+        </div>
+    </div>
 {% endblock body %}
