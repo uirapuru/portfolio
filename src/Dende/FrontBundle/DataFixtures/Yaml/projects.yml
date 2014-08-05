@@ -1,94 +1,43 @@
-movablemedia:
-    name: movablemedia.com
-    description: "Advertisement analytics for bloggers"
+gyman:
+    name: gyman.pl
+    description: Easy to use fitness club managment and analytics
     features:
-        - feature one
-        - feature two
-        - feature three
+        - subscriptions and online payments
+        - camera and barcode reader support
     tags:
-        - Symfony 1.4
+        - Symfony 2.5
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
-        
-episodesconnect:
-    name: episodesconnect.com
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
-    tags:
-        - Symfony 1.4
-        - jQuery
-    company: clearcode
-    pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        
-piwikpro:
-    name: piwik.pro
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
-    tags:
-        - Symfony 1.4
-        - jQuery
-    company: clearcode
-    pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        
-pennysaverusa:
-    name: pennysaverusa.com
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
-    tags:
-        - Symfony 1.4
-        - jQuery
-    company: clearcode
-    pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+
         
 cookie.com.pl:
-    name: movablemedia.com
-    description: "Advertisement analytics for bloggers"
+    name: cookie.com.pl
+    description: "Adverts and logos on chocolates"
     features:
-        - feature one
-        - feature two
-        - feature three
+        - product catalog
+        - easy to use, ajax based administration panel
     tags:
-        - Symfony 1.4
+        - Zend Framework 1
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         
 sallyyumeno.com:
-    name: movablemedia.com
-    description: "Advertisement analytics for bloggers"
+    name: sallyyumeno.com
+    description: "Foto and modelling agency"
     features:
-        - feature one
-        - feature two
-        - feature three
+        - profile catalogs with galleries
+        - submission of personal info and fotos to catalog
+        - generating of pdf registration forms
+        - easy to use administration panel
     tags:
-        - Symfony 1.4
+        - Zend Framework 1
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -96,15 +45,15 @@ sallyyumeno.com:
         
 thomascloud:
     name: thomascloudofficial.com
-    description: "Advertisement analytics for bloggers"
+    description: DJ's portfolio
     features:
-        - feature one
-        - feature two
-        - feature three
+        - text editor for static content 
+        - events schedule
+        - soundcloud integration
+        - gallery and music file catalog
     tags:
         - Symfony 1.4
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -112,15 +61,12 @@ thomascloud:
         
 toromedia:
     name: toromedia.pl
-    description: "Advertisement analytics for bloggers"
+    description: Filming and post-production agency
     features:
-        - feature one
-        - feature two
-        - feature three
+        - one-page app
     tags:
-        - Symfony 1.4
+        - Silex
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -128,15 +74,10 @@ toromedia:
         
 capoeiraapelido:
     name: capoeiraapelido.com
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
+    description: Catalog of portuguese words and names with illustrations
     tags:
         - Symfony 1.4
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -144,35 +85,19 @@ capoeiraapelido:
         
 portuga:
     name: portuga.pl
-    description: "Advertisement analytics for bloggers"
+    description: Socially driven portuguese vocabulary
     features:
-        - feature one
-        - feature two
-        - feature three
+        - integration with Google Translator
+        - internalization
+        - integration with Google Text to speech
     tags:
-        - Symfony 1.4
+        - Zend Framework 1
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         
-gyman:
-    name: gyman.pl
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
-    tags:
-        - Symfony 1.4
-        - jQuery
-    company: clearcode
-    pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
         
 drascar:
     name: drascar.pl
@@ -272,3 +197,36 @@ studdin:
         - http://placehold.it/150x112
         
         
+movablemedia:
+    name: movablemedia.com
+    description: "Advertisement analytics for bloggers"
+    features:
+        - ajax based admin panel
+        - integration with Piwik Analytics
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+episodesconnect:
+    name: episodesconnect.com
+    description: "Patient managment program for hospitals and medical centers supporting U.S. Health Care Program"
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+piwikpro:
+    name: piwik.pro
+    description: "Piwik Analytics in cloud and supporting services"
+    company: clearcode
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        
+pennysaverusa:
+    name: pennysaverusa.com
+    company: clearcode

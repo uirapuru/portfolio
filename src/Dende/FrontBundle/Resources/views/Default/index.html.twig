@@ -37,17 +37,25 @@
             <li class="label label-success">Jenkins CI</li>
             <li class="label label-success">Apache</li>
             <li class="label label-success">Linux</li>
+            
+            <li class="label label-warning">Capistrano</li>
         </ul>
         <div class="col-md-6">
             <a href="http://www.zend.com/en/store/education/certification/yellow-pages.php#show-ClientCandidateID=ZEND025464" class="pull-right">
                 <img src="http://www.zend.com/training-images/logos/zce-php-engineer-logo-l.jpg" style="height: 120px;"/>
             </a>
+            
+            <div class='brainbench'>
+                <img src="{{ asset('images/php4.gif') }}" />
+                <img src="{{ asset('images/php5.gif') }}" />
+                <img src="{{ asset('images/php54.gif') }}" />
+            </div>
         </div>
     </div>
 
     <div class="container">
         <div class="col-md-6 aboutList" id="experience">
-            <h3>Doświadczenie <span class="showmore"><input type="checkbox" ng-model="otherjobs">&nbsp;więcej</span></h3> 
+            <h3>{{ 'work_experience'|trans }}<span class="showmore"><input type="checkbox" ng-model="otherjobs">&nbsp;{{ 'read_more'|trans }}</span></h3> 
             <div class="clearfix"></div>
             <ul id="exp">
                 <li>
@@ -156,7 +164,7 @@
             <h3>Zainteresowania</h3>
             <ul>
                 <li>
-                    <h4>Capoeira <span class="showmore"><input type="checkbox" ng-model="capoeira">&nbsp;więcej</span></h4>
+                    <h4>Capoeira <span class="showmore"><input type="checkbox" ng-model="capoeira">&nbsp;{{ 'read_more'|trans }}</span></h4>
                     <div class="clearfix"></div>
                     <p ng-show="capoeira">uprawiam ją czynnie od września 2000 roku, obecnie posiadam stopień Graduado w grupie Capoeira Camangula.
                         Uczestnik krajowych oraz międzynarodowych wydarzeń związanych z capoeira, przez 5 lat prowadziłem zajęcia
@@ -164,7 +172,7 @@
                         już samodzielnie działającym klubem.</p>
                 </li>                            
                 <li>
-                    <h4>Brazylijskie Jiu Jitsu <span class="showmore"><input type="checkbox" ng-model="bjj">&nbsp;więcej</span></h4>
+                    <h4>Brazylijskie Jiu Jitsu <span class="showmore"><input type="checkbox" ng-model="bjj">&nbsp;{{ 'read_more'|trans }}</span></h4>
                     <div class="clearfix"></div>
                     <p ng-show="bjj">uprawiam je od około 2007 roku. Startuję w amatorskich zawodach na szczeblu regionalnym i krajowym,
                         przez 2 lata w olsztyńskim Berserkers Team oraz w Rio Grappling Club Wrocław. Do sukcesów należą między
@@ -181,7 +189,7 @@
                     </ul>
                 </li>                                                     
                 <li>
-                    <h4>Survival, militarystyka, turystyka <span class="showmore"><input type="checkbox" ng-model="survival">&nbsp;więcej</span></h4>
+                    <h4>Survival, militarystyka, turystyka <span class="showmore"><input type="checkbox" ng-model="survival">&nbsp;{{ 'read_more'|trans }}</span></h4>
                     <div class="clearfix"></div>
                     <p ng-show="survival">Uprawnienia IRR instruktora survival a także samoobrona. Doświadczenie w pracy jako wychowawca kolonijny.</p>
                 </li>                                                     
