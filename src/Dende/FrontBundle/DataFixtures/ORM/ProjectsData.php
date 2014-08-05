@@ -17,11 +17,26 @@ class ProjectsData extends BaseFixture
         $project = new Project();
                 
         $project->setName($params["name"]);
-        $project->setFeatures($params["features"]);
-        $project->setTags($params["tags"]);
-        $project->setPictures($params["pictures"]);
-        $project->setCompany($params["company"]);
-        $project->setDescription($params["description"]);
+        
+        if (isset($params["features"])) {
+            $project->setFeatures($params["features"]);
+        }
+        
+        if (isset($params["tags"])) {
+            $project->setTags($params["tags"]);
+        }
+        
+        if (isset($params["pictures"])) {
+            $project->setPictures($params["pictures"]);
+        }
+        
+        if (isset($params["company"])) {
+            $project->setCompany($params["company"]);
+        }
+        
+        if (isset($params["description"])) {
+            $project->setDescription($params["description"]);
+        }
         
         $this->manager->persist($project);
         $this->manager->flush();

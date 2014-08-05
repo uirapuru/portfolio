@@ -41,15 +41,15 @@
             <li class="label label-warning">Capistrano</li>
         </ul>
         <div class="col-md-6">
+            <div id='brainbench' class="pull-right">
+                <img src="{{ asset('/bundles/front/images/php4.gif') }}" />
+                <img src="{{ asset('/bundles/front/images/php5.gif') }}" />
+                <img src="{{ asset('/bundles/front/images/php54.gif') }}" />
+            </div>
+            
             <a href="http://www.zend.com/en/store/education/certification/yellow-pages.php#show-ClientCandidateID=ZEND025464" class="pull-right">
                 <img src="http://www.zend.com/training-images/logos/zce-php-engineer-logo-l.jpg" style="height: 120px;"/>
             </a>
-            
-            <div class='brainbench'>
-                <img src="{{ asset('images/php4.gif') }}" />
-                <img src="{{ asset('images/php5.gif') }}" />
-                <img src="{{ asset('images/php54.gif') }}" />
-            </div>
         </div>
     </div>
 
@@ -67,11 +67,11 @@
                 <li>
                     <strong>Dende</strong><br />
                     <span class="date">V.2011 -  chwila obecna</span>
-                    <span class="occupation"> (web developer)</span>
+                    <span class="occupation"> {{'running_own_business'|trans }}</span>
                     <div class="clearfix"></div>
                 </li>                            
                 <li>
-                    <strong>Studdin.com && docloud.pl</strong><br />
+                    <strong>Studdin.com / Docloud.pl</strong><br />
                     <span class="date">IX.2012 - VI.2014</span>
                     <span class="occupation"> (senior developer)</span>
                     <div class="clearfix"></div>
@@ -139,7 +139,7 @@
             </ul>
         </div>
         <div class="col-md-6 aboutList rightColumn">
-            <h3>Edukacja</h3>
+            <h3>{{ 'education'|trans }}</h3>
             <ul>
                 <li>
                     <strong>Uniwersytet Warmińsko-Mazurski</strong><br />
@@ -161,7 +161,7 @@
     </div>
     <div class="container">
         <div class="col-md-6 aboutList">
-            <h3>Zainteresowania</h3>
+            <h3>{{ 'free_time_activities'|trans }}</h3>
             <ul>
                 <li>
                     <h4>Capoeira <span class="showmore"><input type="checkbox" ng-model="capoeira">&nbsp;{{ 'read_more'|trans }}</span></h4>
@@ -196,15 +196,15 @@
             </ul>
         </div>
         <div class="col-md-6 aboutList rightColumn">
-            <h3>Języki obce</h3>
+            <h3>{{ 'foreign_languages' | trans }}</h3>
             <ul>
                 <li>
-                    <strong>język angielski</strong><br />
-                    w stopniu komunikatywnym
+                    <strong>{{ 'language.english' | trans }}</strong><br />
+                    {{ 'proficiency.english' | trans }}
                 </li>                            
                 <li>
-                    <strong>język portugalski (w. brazylijska)</strong><br />
-                    w stopniu podstawowym
+                    <strong>{{ 'language.portuguese' | trans }}</strong><br />
+                    {{ 'proficiency.portuguese' | trans }}
                 </li>                            
             </ul>
         </div>

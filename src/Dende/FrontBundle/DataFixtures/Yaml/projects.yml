@@ -15,7 +15,7 @@ gyman:
         
 cookie.com.pl:
     name: cookie.com.pl
-    description: "Adverts and logos on chocolates"
+    description: "Advertising on chocolate"
     features:
         - product catalog
         - easy to use, ajax based administration panel
@@ -101,15 +101,10 @@ portuga:
         
 drascar:
     name: drascar.pl
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
+    description: A auto-parts dealer homepage
     tags:
         - Symfony 1.4
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -117,15 +112,12 @@ drascar:
         
 lukasautohandel:
     name: lukasautohandel.de
-    description: "Advertisement analytics for bloggers"
+    description: Car dealer homepage
     features:
-        - feature one
-        - feature two
-        - feature three
+        - easy to use panel to manage te directory
     tags:
         - Symfony 1.4
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -133,15 +125,9 @@ lukasautohandel:
         
 mmanews:
     name: mmanews.pl
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
+    description: One of the biggest polish news site on mma
     tags:
-        - Symfony 1.4
-        - jQuery
-    company: clearcode
+        - wordpress
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -149,32 +135,24 @@ mmanews:
         
 takedown:
     name: takedown.pl
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
+    description: MMA gear online shop
     tags:
-        - Symfony 1.4
-        - jQuery
-    company: clearcode
+        - osCommerce
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         
-        
 docloud:
     name: docloud.pl
-    description: "Advertisement analytics for bloggers"
+    description: Document sharing and selling platform
     features:
-        - feature one
-        - feature two
-        - feature three
+        - online payments
+        - differed functions for companies and students
+        - facebook integration
     tags:
         - Symfony 1.4
         - jQuery
-    company: clearcode
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -182,15 +160,7 @@ docloud:
         
 studdin:
     name: studdin.com
-    description: "Advertisement analytics for bloggers"
-    features:
-        - feature one
-        - feature two
-        - feature three
-    tags:
-        - Symfony 1.4
-        - jQuery
-    company: clearcode
+    description: Site connecting student, companies and universities.
     pictures:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
@@ -230,3 +200,13 @@ piwikpro:
 pennysaverusa:
     name: pennysaverusa.com
     company: clearcode
+        
+stat24:
+    name: stat24.com
+    description: "Analytics System"
+    company: redefine
+    pictures:
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        - http://placehold.it/150x112
+        

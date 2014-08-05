@@ -9,13 +9,8 @@ common.there_were_errors: 'There were errors'
 menu.main.cv: CV
 menu.main.projects: Projects
 menu.main.contact: Contact
-work_experience: 'Work Experience'
-read_more: 'show more'
-running_own_business: 'Running own business'
+work_experience: Work Experience
+read_more: show more
+running_own_business: Running own business
 education: Education
 free_time_activities: Hobby
-language.english: english
-proficiency.english: intermediate (B2/B1 in CEF)
-language.portuguese: portuguese (brazilian version)
-proficiency.portuguese: elementary (A2/A1 in CEF)
-foreign_languages: Foreign languages
