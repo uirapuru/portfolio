@@ -15,3 +15,6 @@ compare.page.title: __compare.page.title
 common.successful: __common.successful
 common.there_were_errors: __common.there_were_errors
 index.page.title: __index.page.title
+menu.main.cv:       CV
+menu.main.projects: Projekty
+menu.main.contact: Kontakt
