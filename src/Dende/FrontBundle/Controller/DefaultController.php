@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Dende\FrontBundle\Form\ContactType;
 
 class DefaultController extends Controller
@@ -94,6 +95,38 @@ class DefaultController extends Controller
         $this->get('session')->set('_locale', $locale);
         return $this->redirect(
             $request->headers->get('referer')    
+        );
+    }
+    
+    /**
+     * @Route(
+     *  "/cv.html",
+     *  name="download_html",
+     * )
+     * @Template("FrontBundle::cv.html.twig")
+     */
+    public function getAsHtmlAction()
+    {
+     return array();   
+    }
+    /**
+     * @Route(
+     *  "/cv.pdf",
+     *  name="download_pdf",
+     * )
+     * @Template()
+     */
+    public function getAsPdfAction()
+    {
+        $html = $this->renderView('FrontBundle::cv.html.twig', array());
+
+        return new Response(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'attachment; filename="cv.pdf"'
+            )
         );
     }
 }

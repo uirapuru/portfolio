@@ -23,7 +23,9 @@
         "knplabs/knp-menu": "2.0.*@dev",
         "knplabs/knp-menu-bundle": "2.0.*@dev",
         "gedmo/doctrine-extensions" : "2.3.9",
-        "doctrine/doctrine-fixtures-bundle": "2.2.*"        
+        "doctrine/doctrine-fixtures-bundle": "2.2.*",
+        "knplabs/knp-snappy-bundle": "dev-master",
+        "h4cc/wkhtmltopdf-amd64" : "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
