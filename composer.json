@@ -25,7 +25,8 @@
         "gedmo/doctrine-extensions" : "2.3.9",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "knplabs/knp-snappy-bundle": "dev-master",
-        "h4cc/wkhtmltopdf-amd64" : "*"
+        "h4cc/wkhtmltopdf-amd64" : "*",
+        "raven/raven": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

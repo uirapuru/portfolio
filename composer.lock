@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "003d76a6e346c97870c3e846edadc658",
+    "hash": "48a69cce33507d76bd622b2e59acbe47",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1474,6 +1474,58 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "raven/raven",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsentry/raven-php.git",
+                "reference": "b4db1d186d166c2937c6fdd6a8bdff6b333edf53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsentry/raven-php/zipball/b4db1d186d166c2937c6fdd6a8bdff6b333edf53",
+                "reference": "b4db1d186d166c2937c6fdd6a8bdff6b333edf53",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "bin": [
+                "bin/raven"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Raven_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "David Cramer",
+                    "email": "dcramer@gmail.com"
+                }
+            ],
+            "description": "A PHP client for Sentry (http://getsentry.com)",
+            "homepage": "http://getsentry.com",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "time": "2014-07-23 09:55:31"
+        },
+        {
             "name": "sensio/distribution-bundle",
             "version": "v3.0.4",
             "target-dir": "Sensio/Bundle/DistributionBundle",
@@ -2263,7 +2315,8 @@
         "squizlabs/php_codesniffer": 20,
         "knplabs/knp-menu": 20,
         "knplabs/knp-menu-bundle": 20,
-        "knplabs/knp-snappy-bundle": 20
+        "knplabs/knp-snappy-bundle": 20,
+        "raven/raven": 20
     },
     "prefer-stable": false,
     "platform": {
