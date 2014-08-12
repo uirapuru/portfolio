@@ -84,7 +84,7 @@ class DefaultController extends Controller
      * @Route(
      *  "/language/{locale}",
      *  name="switch_language",
-     *  requirements={"locale" = "(pl|en)"},
+     *  requirements={"locale" = "(pl|en|de|pt)"},
      *  defaults={"locale" = "pl"}
      * )
      * @Template()

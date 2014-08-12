@@ -8,9 +8,7 @@ gyman:
         - Symfony 2.5
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - gyman.pl.png
 
         
 cookie.com.pl:
@@ -23,9 +21,7 @@ cookie.com.pl:
         - Zend Framework 1
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - cookie.com.pl.png
         
 sallyyumeno.com:
     name: sallyyumeno.com
@@ -39,9 +35,7 @@ sallyyumeno.com:
         - Zend Framework 1
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - sallyyumeno.com.png
         
 thomascloud:
     name: thomascloudofficial.com
@@ -55,9 +49,7 @@ thomascloud:
         - Symfony 1.4
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - thomascloudofficial.com.png
         
 toromedia:
     name: toromedia.pl
@@ -68,9 +60,7 @@ toromedia:
         - Silex
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - toromedia.pl.png
         
 capoeiraapelido:
     name: capoeiraapelido.com
@@ -79,9 +69,7 @@ capoeiraapelido:
         - Symfony 1.4
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - capoeiraapelido.com.png
         
 portuga:
     name: portuga.pl
@@ -95,8 +83,6 @@ portuga:
         - jQuery
     pictures:
         - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
         
         
 drascar:
@@ -106,9 +92,7 @@ drascar:
         - Symfony 1.4
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - drascar.pl.png
         
 lukasautohandel:
     name: lukasautohandel.de
@@ -119,9 +103,7 @@ lukasautohandel:
         - Symfony 1.4
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - lukasautohandel.de.png
         
 mmanews:
     name: mmanews.pl
@@ -154,9 +136,7 @@ docloud:
         - Symfony 1.4
         - jQuery
     pictures:
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
-        - http://placehold.it/150x112
+        - docloud.pl.png
         
 studdin:
     name: studdin.com

@@ -5,7 +5,15 @@
     <div class="panel panel-default">
         <div class="row padall">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <img src="{% if project.pictures[0] is defined %}{{ project.pictures[0] }}{% else %}http://placehold.it/150x112&text=no%20foto{% endif %}" />
+                <img src="{% if project.pictures[0] is defined %}
+                     {% if 'http://' in project.pictures[0] or 'https://' in project.pictures[0] %}
+                        {{ project.pictures[0] }}
+                     {% else %}
+                        {{ asset('/bundles/front/images/projects/'~project.pictures[0]) }}
+                    {% endif %}
+                {% else %}
+                    http://placehold.it/150x112&text=no%20foto
+                {% endif %}" />
                 
                 {% if project.company is defined %}
                 <div class="label label-danger">{{ project.company }}</div>
