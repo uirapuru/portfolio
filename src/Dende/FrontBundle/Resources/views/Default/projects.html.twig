@@ -1,19 +1,26 @@
 {% extends "FrontBundle::layout.html.twig" %}
 
+{% macro picture(project) %}
+    {% if project.pictures[0] is defined %}
+        {% if 'http://' in project.pictures[0] or 'https://' in project.pictures[0] %}
+           {% set image = project.pictures[0] %}
+        {% else %}
+           {% set image = asset('/bundles/front/images/projects/'~project.pictures[0]) %}
+        {% endif %}
+    {% else %}
+        {% set image = null %}
+    {% endif %}
+    
+    <a href="{{ image }}" {% if image is not null %}rel="prettyPhoto[project]"{% endif %}><img src="{{ image }}" /></a>
+{% endmacro %}
+
 {% macro project(project) %}
+                        
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
     <div class="panel panel-default">
         <div class="row padall">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <img src="{% if project.pictures[0] is defined %}
-                     {% if 'http://' in project.pictures[0] or 'https://' in project.pictures[0] %}
-                        {{ project.pictures[0] }}
-                     {% else %}
-                        {{ asset('/bundles/front/images/projects/'~project.pictures[0]) }}
-                    {% endif %}
-                {% else %}
-                    http://placehold.it/150x112&text=no%20foto
-                {% endif %}" />
+                {{ _self.picture(project) }}
                 
                 {% if project.company is defined %}
                 <div class="label label-danger">{{ project.company }}</div>
@@ -65,3 +72,14 @@
         </div>
     </div>
 {% endblock body %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function(){
+            $('[rel="prettyPhoto\\\[project\\\]"]').prettyPhoto();
+        });
+    </script>
+{% endblock javascripts %}
+    
+    

@@ -66,13 +66,13 @@ class MenuBuilder extends ContainerAware
             ->setLinkAttribute("class", "flag-icon flag-icon-gb")
             ->setLabel('');
         
-        $menu->addChild('de', array('route' => 'switch_language', 'routeParameters' => array('locale' => 'de')))
-            ->setLinkAttribute("class", "flag-icon flag-icon-de")
-            ->setLabel('');
-        
-        $menu->addChild('pt', array('route' => 'switch_language', 'routeParameters' => array('locale' => 'pt')))
-            ->setLinkAttribute("class", "flag-icon flag-icon-br")
-            ->setLabel('');
+//        $menu->addChild('de', array('route' => 'switch_language', 'routeParameters' => array('locale' => 'de')))
+//            ->setLinkAttribute("class", "flag-icon flag-icon-de")
+//            ->setLabel('');
+//        
+//        $menu->addChild('pt', array('route' => 'switch_language', 'routeParameters' => array('locale' => 'pt')))
+//            ->setLinkAttribute("class", "flag-icon flag-icon-br")
+//            ->setLabel('');
         
         $locale = $request->getLocale();
 
