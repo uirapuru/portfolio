@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Portfolio" default="build">
-    <target name="build" depends="prepare,lint,phpunit,parallelTasks,phpcb"/>
+    <target name="build" depends="install,assets" />
     
-    <target name="parallelTasks"
-            description="Run code analysis tasks in parallel">
+    <target name="metrics" depends="prepare,lint,phpunit,parallelTasks,phpcb" />
+    
+    <target name="parallelTasks" description="Run code analysis tasks in parallel">
         <parallel threadCount="2">
             <sequential>
                 <antcall target="pdepend"/>
@@ -14,6 +15,14 @@
             <antcall target="phpdoc"/>
             <antcall target="phploc"/>
         </parallel>
+    </target>
+    
+    <target name="install" description="Installs assets, components and node modules">
+        <antcall target="composer:install"/>
+        <antcall target="install:coffee"/>
+        <antcall target="install:less"/>
+        <antcall target="assets"/>
+        <copy file="${basedir}/web/app_dev.php" tofile="${basedir}/web/index.php" overwrite="true" />
     </target>
 
     <target name="phpcbf" description="php code beautifier and fixer">
@@ -61,7 +70,7 @@
     </target>
 
     <target name="phpunit" description="Run unit tests with PHPUnit">
-        <exec executable="phpunit" failonerror="true">
+        <exec executable="${basedir}/bin/phpunit" failonerror="true">
             <arg value="-c" />
             <arg path="${basedir}/app" />
         </exec>
@@ -78,7 +87,7 @@
     
     <target name="phpdoc"
             description="Generate API documentation using PHPDocumentor">
-        <exec executable="phpdoc">
+        <exec executable="${basedir}/bin/phpdocmd">
             <arg value="--directory" />
             <arg path="${basedir}/src" />
             <arg value="--target" />
@@ -87,7 +96,7 @@
     </target>
     
     <target name="phploc" description="Measure project size using PHPLOC">
-        <exec executable="phploc">
+        <exec executable="${basedir}/bin/phploc">
             <arg value="--log-csv" />
             <arg value="${basedir}/build/logs/phploc.csv" />
             <arg path="${basedir}/src" />
@@ -96,7 +105,7 @@
 
     <target name="pdepend"
             description="Calculate software metrics using PHP_Depend">
-        <exec executable="pdepend">
+        <exec executable="${basedir}/bin/pdepend">
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
@@ -105,7 +114,7 @@
     </target>
 
     <target name="phpcpd" description="Find duplicate code using PHPCPD">
-        <exec executable="phpcpd">
+        <exec executable="${basedir}/bin/phpcpd">
             <arg value="--log-pmd" />
             <arg value="${basedir}/build/logs/pmd-cpd.xml" />
             <arg path="${basedir}/src" />
@@ -114,7 +123,7 @@
 
     <target name="phpcs"
             description="Find coding standard violations using PHP_CodeSniffer">
-        <exec executable="phpcs" output="/dev/null">
+        <exec executable="${basedir}/bin/phpcs" output="/dev/null">
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=${basedir}/app/phpcs.xml" />
@@ -123,7 +132,7 @@
     </target>
     <target name="phpmd"
             description="Perform project mess detection using PHPMD">
-        <exec executable="phpmd">
+        <exec executable="${basedir}/bin/phpmd">
             <arg path="${basedir}/src" />
             <arg value="xml" />
             <arg value="${basedir}/app/phpmd.xml" />
@@ -170,6 +179,64 @@
         <antcall target="capifony:bower:install"/>
         <antcall target="capifony:assets"/>
         <antcall target="capifony:assetic"/>
+    </target>
+    
+    <target name="symfony:cc" description="Clears cache">
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="cache:clear" />
+        </exec>
+    </target>
+    
+    <target name="clean-db" description="Drops, creates schema and loads fixtures">
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="doctrine:database:drop" />
+            <arg value="--force" />
+        </exec>
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="doctrine:database:create" />
+        </exec>
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="doctrine:schema:create" />
+            <arg value="--no-interaction" />
+        </exec>
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="doctrine:fixtures:load" />
+            <arg value="--no-interaction" />
+        </exec>
+    </target>
+    
+    <target name="assets" description="Installs and dumps all assets">
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="assets:install" />
+            <arg value="--symlink" />
+            <arg value="web/" />
+        </exec>
+        <antcall target="bower:install" />
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="assetic:dump" />
+        </exec>
+    </target>
+    
+    <target name="install:coffee" description="Installs coffeescript locally">
+        <exec executable="npm" failonerror="true">
+            <arg value="install" />
+            <arg value="coffee-script" />
+        </exec>
+        <symlink link="${basedir}/bin/coffee" resource="${basedir}/node_modules/coffee-script/bin/coffee" overwrite="true" />
+    </target>
+    
+    <target name="install:less" description="Installs less locally">
+        <exec executable="npm" failonerror="true">
+            <arg value="install" />
+            <arg value="less" />
+        </exec>
     </target>
     
 </project>
