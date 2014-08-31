@@ -10,6 +10,7 @@
 /vendor/
 /bin/
 /composer.phar
-nbproject
 web/js/
 web/css/
+/node_modules/
+/nbproject/
