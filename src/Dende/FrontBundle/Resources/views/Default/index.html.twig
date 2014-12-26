@@ -55,7 +55,44 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 aboutList" id="experience">
+            <div class="col-md-12 aboutList" id="experience">
+                <h3>{{ 'work_experience'|trans }}</h3>
+                <div class="clearfix"></div>
+                <ul id="exp">
+                    {% for job in jobs %}
+                    <li>
+                        <span class="occupation__">{{ job.position }}</span> in <strong>{{ job.name }}</strong>
+                        {%  if job.link is not null %}
+                            <a href="{{ job.link }}">link</a>
+                        {% endif %}
+                        <br />
+                        <span class="date__">
+                            {{ job.from|date }} -
+
+                            {{ dump(job) }}
+
+                            {% if job.to is not null %}
+                                {{ job.to|date }}
+                            {% else %}
+                                {{ 'till_now'|trans }}
+                            {% endif %}
+
+                            ({{  job.getDuration().y }} years and {{  job.getDuration().y }} months)
+
+                        </span>
+                        <ol>
+                        {%  for desc in job.getDescription() %}
+                            <li>{{ desc }}</li>
+                        {% endfor %}
+                        </ol>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 aboutList" id="experience_old">
                 <h3>{{ 'work_experience'|trans }}<span class="showmore"><input type="checkbox" ng-model="otherjobs">&nbsp;{{ 'read_more'|trans }}</span></h3> 
                 <div class="clearfix"></div>
                 <ul id="exp">

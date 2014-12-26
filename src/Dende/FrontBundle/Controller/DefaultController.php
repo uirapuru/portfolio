@@ -18,7 +18,10 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $jobs = $this->getDoctrine()->getRepository("FrontBundle:Job")->findAll();
+        return [
+            "jobs" => $jobs
+        ];
     }
     /**
      * @Route("/projects", name="projects")

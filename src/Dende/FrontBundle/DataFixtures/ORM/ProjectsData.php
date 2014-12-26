@@ -37,9 +37,6 @@ class ProjectsData extends BaseFixture
         if (isset($params["description"])) {
             $project->setDescription($params["description"]);
         }
-        
-        $this->manager->persist($project);
-        $this->manager->flush();
 
         return $project;
     }

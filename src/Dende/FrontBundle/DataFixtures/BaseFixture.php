@@ -22,7 +22,10 @@ class BaseFixture extends AbstractFixture implements OrderedFixtureInterface
         foreach ($value as $key => $params) {
             $object = $this->insert($params);
             $this->addReference($key, $object);
+            $this->manager->persist($object);
         }
+
+        $this->manager->flush();
     }
 
     public function getOrder()

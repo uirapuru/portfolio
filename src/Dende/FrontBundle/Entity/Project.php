@@ -4,9 +4,6 @@ namespace Dende\FrontBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Doctrine\Common\Collections\ArrayCollection;
-use Dende\AccountBundle\Model\InvoiceData;
 
 /**
  * @ORM\Entity
@@ -15,8 +12,7 @@ use Dende\AccountBundle\Model\InvoiceData;
  */
 class Project
 {
-
-    /**
+   /**
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
