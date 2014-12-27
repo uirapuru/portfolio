@@ -60,122 +60,13 @@
                 <div class="clearfix"></div>
                 <ul id="exp">
                     {% for job in jobs %}
-                    <li>
-                        <span class="occupation__">{{ job.position }}</span> in <strong>{{ job.name }}</strong>
-                        {%  if job.link is not null %}
-                            <a href="{{ job.link }}">link</a>
-                        {% endif %}
-                        <br />
-                        <span class="date__">
-                            {{ job.from|date }} -
-
-                            {{ dump(job) }}
-
-                            {% if job.to is not null %}
-                                {{ job.to|date }}
-                            {% else %}
-                                {{ 'till_now'|trans }}
-                            {% endif %}
-
-                            ({{  job.getDuration().y }} years and {{  job.getDuration().y }} months)
-
-                        </span>
-                        <ol>
-                        {%  for desc in job.getDescription() %}
-                            <li>{{ desc }}</li>
-                        {% endfor %}
-                        </ol>
-                    </li>
+                        {{ include("FrontBundle:Default:_job.html.twig", {job: job}) }}
                     {% endfor %}
                 </ul>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-6 aboutList" id="experience_old">
-                <h3>{{ 'work_experience'|trans }}<span class="showmore"><input type="checkbox" ng-model="otherjobs">&nbsp;{{ 'read_more'|trans }}</span></h3> 
-                <div class="clearfix"></div>
-                <ul id="exp">
-                    <li>
-                        <strong>Clearcode.cc</strong><br />
-                        <span class="date">II.2012 - chwila obecna</span>
-                        <span class="occupation">(web developer)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li>
-                        <strong>Dende</strong><br />
-                        <span class="date">V.2011 -  chwila obecna</span>
-                        <span class="occupation"> {{'running_own_business'|trans }}</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li>
-                        <strong>Studdin.com / Docloud.pl</strong><br />
-                        <span class="date">IX.2012 - VI.2014</span>
-                        <span class="occupation"> (senior developer)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li>
-                        <strong>Redefine sp. z o.o.</strong><br />
-                        <span class="date">IV.2010 - IX.2011</span>
-                        <span class="occupation"> (web developer)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>BodyPerfect sp. z o.o.</strong><br />
-                        <span class="date">XII.2009 - XI.2010</span>
-                        <span class="occupation"> (trener personalny)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>Klub Sportowy Capoeira w Olsztynie</strong><br />
-                        <span class="date">XII.2007 - chwila obecna</span>
-                        <span class="occupation"> (prezes klubu oraz instruktor capoeira)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>C. Hartwig Gdynia</strong><br />
-                        <span class="date">X.2006 - III.2006</span>
-                        <span class="occupation"> (pomocnik magazyniera)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>Carnival Arts Center - Glasgow (UK)</strong><br />
-                        <span class="date">VI.2006 - IX.2006</span>
-                        <span class="occupation"> (konserwator oraz pomocnik barmana)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>Agencja reklamowa YellowPoint</strong><br />
-                        <span class="date">X.2004 - VI.2006</span>
-                        <span class="occupation"> (obsługa plotera, webdesign, prace manualne)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>Biuro Turystyki Aktywnej Kompas</strong><br />
-                        <span class="date">VII.2004 - VIII.2009</span>
-                        <span class="occupation"> (wychowawca kolonijny, obozy survival oraz militarne, instruktor samoobrony, team-building)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>TOMnet - kawiarenka internetowa/pub</strong><br />
-                        <span class="date">IX.2002 - XI.2004</span>
-                        <span class="occupation"> (administrator, obsługa klientów)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>Gdyński Ośrodek Sportu i Rekreacji</strong><br />
-                        <span class="date">VI.2003 - XI.2004</span>
-                        <span class="occupation"> (pracownik fizyczny)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li class="otherjobs" ng-show="otherjobs">
-                        <strong>AK-art</strong><br />
-                        <span class="date">VI.2003 - VIII.2003</span>
-                        <span class="occupation"> (pracownik fizyczny, nagłośnienie imprez masowych)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                </ul>
-            </div>
             <div class="col-md-6 aboutList rightColumn">
                 <h3>{{ 'education'|trans }}</h3>
                 <ul>

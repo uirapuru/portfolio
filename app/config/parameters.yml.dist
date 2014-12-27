@@ -21,3 +21,4 @@ parameters:
     use_assetic_controller: false
 
     delivery_address: uirapuruadg@gmail.com
+    pdf_file_name: cv_grzegorz_kaszuba_%%locale%%.pdf

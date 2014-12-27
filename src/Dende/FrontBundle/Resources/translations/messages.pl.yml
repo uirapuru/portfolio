@@ -28,3 +28,11 @@ proficiency.english: znajomość dobra (B2/B1 w skali CEF)
 language.portuguese: język portugalski (w. brazylijska)
 proficiency.portuguese: znajomość podstawowa (A2/A1 w skali CEF)
 foreign_languages: języki obce
+duration.years: "{0} |{1} %count% rok|[2,4] %count% lata|[5,Inf] %count% lat"
+duration.months: "{0} |{1} %count% miesiąc|[2,4] %count% miesiące|[5,Inf] %count% miesięcy"
+duration.and: "i"
+duration.from: od
+duration.till: do
+duration.till_now: teraz
+position.in: w
+footer.download.pdf: Pobierz CV w formacie PDF

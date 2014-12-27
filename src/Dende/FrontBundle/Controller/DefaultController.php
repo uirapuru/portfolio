@@ -103,7 +103,7 @@ class DefaultController extends Controller
     
     /**
      * @Route(
-     *  "/cv.html",
+     *  "/download/cv.html",
      *  name="download_html",
      * )
      * @Template("FrontBundle::cv.html.twig")
@@ -114,21 +114,29 @@ class DefaultController extends Controller
     }
     /**
      * @Route(
-     *  "/cv.pdf",
+     *  "/download/cv.pdf",
      *  name="download_pdf",
      * )
      * @Template()
      */
     public function getAsPdfAction()
     {
-        $html = $this->renderView('FrontBundle::cv.html.twig', array());
+        $jobs = $this->getDoctrine()->getRepository("FrontBundle:Job")->findAll();
+        $html = $this->renderView('FrontBundle::cv.html.twig', [
+            "jobs" => $jobs
+        ]);
+
+        $filename = strtr(
+            $this->container->getParameter("pdf_file_name"),
+            ["%locale%" => $this->container->get("session")->get("_locale")]
+        );
 
         return new Response(
             $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
             200,
             array(
                 'Content-Type'          => 'application/pdf',
-                'Content-Disposition'   => 'attachment; filename="cv.pdf"'
+                'Content-Disposition'   => 'attachment; filename="'.$filename.'"'
             )
         );
     }

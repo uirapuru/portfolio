@@ -23,7 +23,9 @@ class JobsData extends BaseFixture
         $job->setCountry($country);
         $job->setLink($link);
         $job->setFrom(new \DateTime($from));
-        $job->setTo(new \DateTime($to));
+        if (!is_null($to)) {
+            $job->setTo(new \DateTime($to));
+        }
         $job->setPosition($position);
         $job->setDescriptionEn($description_en);
         $job->setDescriptionPl($description_pl);

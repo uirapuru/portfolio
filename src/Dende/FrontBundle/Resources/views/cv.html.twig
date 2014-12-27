@@ -45,38 +45,10 @@
                 </header>
 
                 <ul id="exp">
-                    <li>
-                        <strong>Yourvine sp. z o.o.</strong><br />
-                        <span class="date">X.20014 - {{ 'till_now'|trans }}</span>
-                        <span class="occupation">(web developer)</span>
-                        <div class="clearfix"></div>
-                    </li>
-                    <li>
-                        <strong>Clearcode.cc</strong><br />
-                        <span class="date">II.2012 - IX.20014</span>
-                        <span class="occupation">(web developer)</span>
-                        <div class="clearfix"></div>
-                    </li>
-                    <li>
-                        <strong>Dende</strong><br />
-                        <span class="date">V.2011 -  chwila obecna</span>
-                        <span class="occupation"> {{'running_own_business'|trans }}</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li>
-                        <strong>Studdin.com / Docloud.pl</strong><br />
-                        <span class="date">IX.2012 - VI.2014</span>
-                        <span class="occupation"> (senior developer)</span>
-                        <div class="clearfix"></div>
-                    </li>                            
-                    <li>
-                        <strong>Redefine sp. z o.o.</strong><br />
-                        <span class="date">IV.2010 - IX.2011</span>
-                        <span class="occupation"> (web developer)</span>
-                        <div class="clearfix"></div>
-                    </li> 
+                    {% for job in jobs %}
+                        {{ include("FrontBundle:Default:_job.html.twig", {job: job}) }}
+                    {% endfor %}
                 </ul>
-
             </section>
 
             <section>

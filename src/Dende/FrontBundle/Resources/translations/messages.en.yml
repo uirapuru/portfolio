@@ -19,3 +19,11 @@ proficiency.english: intermediate (B2/B1 in CEF)
 language.portuguese: portuguese (brazilian version)
 proficiency.portuguese: elementary (A2/A1 in CEF)
 foreign_languages: Foreign languages
+duration.years: "{0}|{1} %count% year|[2,Inf] %count% years"
+duration.months: "{0}|{1} %count% month|[2,Inf] %count% months"
+duration.and: "and"
+duration.from: from
+duration.till: till
+duration.till_now: now
+position.in: in
+footer.download.pdf: Download in PDF format
