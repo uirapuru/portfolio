@@ -51,6 +51,14 @@ class Article
      */
     protected $templatePl;
 
+    public function getTitle($culture = "pl")
+    {
+        if ($culture === "pl") {
+            return $this->getTitlePl();
+        }
+
+        return $this->getTitleEn();
+    }
 
     public function getTemplate($culture = "pl")
     {

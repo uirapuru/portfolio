@@ -1,5 +1,9 @@
 /web/bundles/
 /web/components/*
+/web/js/
+/web/css/
+/web/assetic/
+
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
@@ -10,8 +14,6 @@
 /vendor/
 /bin/
 /composer.phar
-web/js/
-web/css/
 /node_modules/
 /nbproject/
 /.idea/

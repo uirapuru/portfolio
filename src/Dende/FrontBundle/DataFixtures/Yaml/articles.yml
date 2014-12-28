@@ -3,3 +3,9 @@ remove_assetic:
   title_pl: "Jak się pozbyć assetica z Symfony2"
   template_pl: "remove_assetic_pl.html.twig"
   template_en: "remove_assetic_en.html.twig"
+
+dynamic_database:
+  title_en: "Dynamic databases with Symfony2 and Doctrine"
+  title_pl: "Dynamiczne bazy danych z Symfony2 i Doctrine"
+  template_pl: "dynamic_databases_pl.html.twig"
+  template_en: "dynamic_databases_en.html.twig"
