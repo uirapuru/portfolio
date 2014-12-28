@@ -87,6 +87,12 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        filters:
+          softdeleteable:
+            class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+            enabled: true
+        mappings:
+          StofDoctrineExtensionsBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -115,3 +121,10 @@ knp_snappy:
         enabled:    true
         binary:     "%kernel.root_dir%/../bin/wkhtmltopdf-amd64"
         options:    []
+
+stof_doctrine_extensions:
+  default_locale: en_US
+  orm:
+    default:
+      timestampable: true
+      sluggable: true

@@ -15,6 +15,7 @@ compare.page.title: __compare.page.title
 common.successful: __common.successful
 common.there_were_errors: __common.there_were_errors
 index.page.title: __index.page.title
+menu.main.blog: Blog
 menu.main.cv: CV
 menu.main.projects: Projekty
 menu.main.contact: Kontakt
@@ -36,3 +37,4 @@ duration.till: do
 duration.till_now: teraz
 position.in: w
 footer.download.pdf: Pobierz CV w formacie PDF
+skills: Kwalifikacje

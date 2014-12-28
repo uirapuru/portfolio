@@ -6,6 +6,7 @@ contact.form.labels.submit: Send
 contact.form.required_field: 'field is required'
 common.successful: Success!
 common.there_were_errors: 'There were errors'
+menu.main.blog: Blog
 menu.main.cv: CV
 menu.main.projects: Projects
 menu.main.contact: Contact
@@ -27,3 +28,4 @@ duration.till: till
 duration.till_now: now
 position.in: in
 footer.download.pdf: Download in PDF format
+skills: skills

@@ -24,7 +24,8 @@
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "knplabs/knp-snappy-bundle": "dev-master",
         "h4cc/wkhtmltopdf-amd64" : "*",
-        "raven/raven": "dev-master"
+        "raven/raven": "dev-master",
+        "stof/doctrine-extensions-bundle": "1.2.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
@@ -66,9 +67,6 @@
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.5-dev"
         }
     }
 }

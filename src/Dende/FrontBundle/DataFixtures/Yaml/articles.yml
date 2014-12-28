@@ -1,0 +1,5 @@
+remove_assetic:
+  title_en: "Get rid of assetic from Symfony2"
+  title_pl: "Jak się pozbyć assetica z Symfony2"
+  template_pl: "remove_assetic_pl.html.twig"
+  template_en: "remove_assetic_en.html.twig"
