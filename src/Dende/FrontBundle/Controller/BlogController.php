@@ -2,6 +2,8 @@
 
 namespace Dende\FrontBundle\Controller;
 
+use Dende\FrontBundle\Entity\Article;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -18,14 +20,26 @@ use Dende\FrontBundle\Form\ContactType;
 class BlogController extends Controller
 {
     /**
-     * @Route("/index", name="blog")
+     * @Route("/", name="blog")
      * @Template()
      */
     public function indexAction()
     {
-        $articles = $this->getDoctrine()->getRepository("")->findAll();
+        $articles = $this->getDoctrine()->getRepository("FrontBundle:Article")->findAll();
+
         return [
             "articles" => $articles
+        ];
+    }
+    /**
+     * @Route("/{slug}", name="show_article")
+     * @ParamConverter("article", class="FrontBundle:Article")
+     * @Template()
+     */
+    public function showArticleAction(Article $article)
+    {
+        return [
+            "article" => $article
         ];
     }
 }
