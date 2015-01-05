@@ -6,7 +6,7 @@
     "Grzegorz Kaszuba <uirapuru@tlen.pl>"
   ],
   "description": "My private site with some stuff about my works",
-  "main": "web/someMainFile.js",
+  "main": "web/index.php",
   "moduleType": [
     "amd"
   ],

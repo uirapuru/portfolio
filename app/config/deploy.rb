@@ -1,6 +1,6 @@
 set :application, "portfolio"
-set :domain,      "new.uirapu.ru"
-set :deploy_to,   "/var/www/#{domain}"
+set :domain,      "uirapu.ru"
+set :deploy_to,   "/var/www/uirapu.ru/"
 set :app_path,    "app"
 
 set :user, "uirapuru"
@@ -14,13 +14,17 @@ default_run_options[:pty] = true
 
 set :repository,  "git@github.com:uirapuru/portfolio.git"
 set :scm,         :git
-set :branch, "master"
+set :branch, 	   "master"
+set :deploy_via,   :remote_cache
+set :copy_via, :scp
+
+set :interactive_mode, false
 
 set :use_composer, true
 set :composer_options,  "--no-progress --no-interaction --no-dev --no-ansi --prefer-dist --optimize-autoloader"
 set :update_vendors, false
 set :vendors_mode, "install"
-set :cache_warmup, false
+set :cache_warmup, true
 
 set :shared_files,      ["app/config/parameters.yml"]
 set :shared_children,     [app_path + "/logs", web_path + "/uploads", app_path + "/spool"]
@@ -43,17 +47,36 @@ set :use_sudo,  false
 logger.level = Logger::MAX_LEVEL
 
 # Run migrations before warming the cache
-after "symfony:composer:install", "bower:install"
-after "symfony:composer:update", "bower:install"
+after "deploy:restart", "assets"
+after "deploy:restart", "deploy:cleanup"
 
-after "bower:install", "symfony:assets:install"
-after "symfony:assets:install", "symfony:assetic:dump"
- 
 # Custom(ised) tasks
-namespace :bower do
-	desc "Install bower"
-	task :install, :except => { :no_release => true }, :roles => :app do
-		run "cd #{release_path} && bower install -q"
-		puts "--> Bower components installed".green
-	end
+
+task :assets, :except => { :no_release => true }, :roles => :app do
+	set :opt, {
+		:via => :scp,
+		:recursive => true,
+		:forward_agent => true,
+		:auth_methods => ["publickey"],
+		:verbose => true
+	}
+    capifony_pretty_print "--> Copying web/js"
+	upload("web/js",		current_path + "/web/js", opt)
+    capifony_puts_ok
+
+    capifony_pretty_print "--> Copying web/css"
+	upload("web/css",		current_path + "/web/css", opt)
+    capifony_puts_ok
+
+    capifony_pretty_print "--> Copying web/images"
+	upload("web/images",	current_path + "/web/images", opt)
+    capifony_puts_ok
+
+    capifony_pretty_print "--> Copying web/fonts"
+	upload("web/fonts",		current_path + "/web/fonts", opt)
+    capifony_puts_ok
+
+    capifony_pretty_print "--> Copying web/flags"
+	upload("web/flags",		current_path + "/web/flags", opt)
+    capifony_puts_ok
 end

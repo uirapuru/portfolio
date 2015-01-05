@@ -3,7 +3,6 @@
 /web/js/
 /web/css/
 /web/assetic/
-
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
@@ -17,3 +16,10 @@
 /node_modules/
 /nbproject/
 /.idea/
+/bower_components
+web/images
+web/fonts
+web/flags
+.rsync_cache
+.idea/*
+.idea/
