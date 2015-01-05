@@ -12,23 +12,15 @@
 
         {% block stylesheets %}
             <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-
-            {% stylesheets
-                '@default_stylesheets'
-            filter='cssrewrite' %}
-            <link rel="stylesheet" href="{{ asset_url }}" />
-            {% endstylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors.css') }}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/project.css') }}"/>
         {% endblock %}
     </head>
     <body ng-app>
     {% block body %}{% endblock %}
     {% block javascripts %}
-        {% javascripts
-            '@default_javascripts'
-        %}
-        <script src="{{ asset_url }}" type="text/javascript"></script>
-        {% endjavascripts %}
-
+        <script src="{{ asset('js/vendors.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/project.js') }}" type="text/javascript"></script>
         {% include '::analytics.html.twig' %}
     {% endblock javascripts %}
     <footer>
