@@ -80,4 +80,5 @@ task :assets, :except => { :no_release => true }, :roles => :app do
     capifony_pretty_print "--> Copying web/flags"
 	upload("web/flags",		current_path + "/web/flags", opt)
     capifony_puts_ok
+
 end
