@@ -45,7 +45,7 @@ set  :keep_releases,  3
 set :use_sudo,  false
 
 # Be more verbose by uncommenting the following line
-# logger.level = Logger::MAX_LEVEL
+logger.level = Logger::MAX_LEVEL
 
 # Run migrations before warming the cache
 after "deploy:restart", "assets"
@@ -61,10 +61,24 @@ task :assets, :except => { :no_release => true }, :roles => :app do
 		:auth_methods => ["publickey"],
 		:verbose => true
 	}
-
+    capifony_pretty_print "--> Copying web/js"
 	upload("web/js",		current_path + "/web/js", opt)
+    capifony_puts_ok
+
+    capifony_pretty_print "--> Copying web/css"
 	upload("web/css",		current_path + "/web/css", opt)
+    capifony_puts_ok
+
+    capifony_pretty_print "--> Copying web/images"
 	upload("web/images",	current_path + "/web/images", opt)
+    capifony_puts_ok
+
+    capifony_pretty_print "--> Copying web/fonts"
 	upload("web/fonts",		current_path + "/web/fonts", opt)
+    capifony_puts_ok
+
+    capifony_pretty_print "--> Copying web/flags"
 	upload("web/flags",		current_path + "/web/flags", opt)
+    capifony_puts_ok
+
 end
