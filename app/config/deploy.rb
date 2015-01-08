@@ -10,6 +10,7 @@ set :ssh_options, {
     :auth_methods => ["publickey"],
 }
 
+
 default_run_options[:pty] = true
 
 set :repository,  "git@github.com:uirapuru/portfolio.git"
