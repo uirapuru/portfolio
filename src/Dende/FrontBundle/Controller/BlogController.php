@@ -38,6 +38,8 @@ class BlogController extends Controller
      */
     public function showArticleAction(Article $article)
     {
+
+
         return [
             "article" => $article
         ];
