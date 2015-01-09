@@ -10,7 +10,6 @@ set :ssh_options, {
     :auth_methods => ["publickey"],
 }
 
-
 default_run_options[:pty] = true
 
 set :repository,  "git@github.com:uirapuru/portfolio.git"
@@ -81,4 +80,10 @@ task :assets, :except => { :no_release => true }, :roles => :app do
 	upload("web/flags",		current_path + "/web/flags", opt)
     capifony_puts_ok
 
+end
+
+task :develop do
+	set :deploy_to,   "/var/www/dev.uirapu.ru/"
+	set :branch, 	   "master"
+	set :composer_options,  "--no-progress --no-interaction --no-ansi --prefer-dist --optimize-autoloader"
 end
