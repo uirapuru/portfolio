@@ -8,6 +8,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\Table(name="jobs")
  * @codeCoverageIgnore
+ *
+ * @SuppressWarnings(PHPMD.TooManyFields)
  */
 
 class Job
