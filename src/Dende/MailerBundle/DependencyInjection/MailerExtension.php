@@ -16,6 +16,7 @@ class MailerExtension extends Extension
 {
     /**
      * {@inheritDoc}
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
     public function load(array $configs, ContainerBuilder $container)
     {
