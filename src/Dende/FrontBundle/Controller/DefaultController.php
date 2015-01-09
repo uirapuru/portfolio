@@ -74,7 +74,7 @@ class DefaultController extends Controller
     /**
      * @Template()
      */
-    public function embeddedContactAction(Request $request)
+    public function embeddedContactAction()
     {
         $form = $this->createForm(new ContactType);
         
