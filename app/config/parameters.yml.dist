@@ -8,19 +8,24 @@ parameters:
     database_user:     ~
     database_password: ~
 
+    test_database_name:     portfolio_test
+    test_database_user:     replace_this_test_user
+    test_database_password: replace_this_test_pass
+
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~
     mailer_password:   ~
 
     locale:            pl
-    secret:            SpruchniałyKonarWWątłyKwiatUbiera
+    secret:            NoCoZaPięknaTragedia
 
     debug_toolbar:          true
     debug_redirects:        false
     use_assetic_controller: false
 
-    delivery_address: uirapuruadg@gmail.com
+    delivery_address: ~
     pdf_file_name: cv_grzegorz_kaszuba_%%locale%%.pdf
 
-    sentry_backend_dsn: http://b1142cf3b8494ce298ca01e0b914a099:5572361eeeed451291a9345193ffb650@sentry.uirapu.ru/2
+    sentry_backend_dsn:         ~
+    sentry_backend_dsn_dev:     ~

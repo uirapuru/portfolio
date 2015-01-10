@@ -21,7 +21,6 @@
     <target name="test-phpunit">
         <phingcall target="reset-db">
             <property name="env" value="test" />
-            <property name="club" value="test" />
         </phingcall>
         <echo>Running phpunit tests</echo>
         <exec command="bin/phpunit -c app --testsuite=all" checkreturn="true" passthru="true" />
