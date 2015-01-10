@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Dende\FrontBundle\Form\ContactType;
+use Dende\FrontBundle\Form\Type\ContactType;
 
 class DefaultController extends Controller
 {
@@ -74,7 +74,7 @@ class DefaultController extends Controller
     /**
      * @Template()
      */
-    public function embeddedContactAction(Request $request)
+    public function embeddedContactAction()
     {
         $form = $this->createForm(new ContactType);
         

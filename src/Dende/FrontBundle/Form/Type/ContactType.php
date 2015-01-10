@@ -1,6 +1,6 @@
 <?php
 
-namespace Dende\FrontBundle\Form;
+namespace Dende\FrontBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,6 +15,7 @@ class ContactType extends AbstractType
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

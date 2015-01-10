@@ -15,16 +15,17 @@ class ArticlesData extends BaseFixture
     /**
      * @param $params
      * @return Article
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
     public function insert($params)
     {
         extract($params);
 
         $article = new Article();
-        $article->setTitleEn($title_en);
-        $article->setTitlePl($title_pl);
-        $article->setTemplateEn($template_en);
-        $article->setTemplatePl($template_pl);
+        $article->setTitleEn($titleEn);
+        $article->setTitlePl($titlePl);
+        $article->setTemplateEn($templateEn);
+        $article->setTemplatePl($templatePl);
 
         return $article;
     }

@@ -12,6 +12,11 @@ class JobsData extends BaseFixture
         return 1;
     }
 
+    /**
+     * @param $params
+     * @return Job
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+     */
     public function insert($params)
     {
         extract($params);
@@ -27,8 +32,8 @@ class JobsData extends BaseFixture
             $job->setTo(new \DateTime($to));
         }
         $job->setPosition($position);
-        $job->setDescriptionEn($description_en);
-        $job->setDescriptionPl($description_pl);
+        $job->setDescriptionEn($descriptionEn);
+        $job->setDescriptionPl($descriptionPl);
 
         return $job;
     }
