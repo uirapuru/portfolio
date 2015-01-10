@@ -23,7 +23,7 @@
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "knplabs/knp-snappy-bundle": "dev-master",
         "h4cc/wkhtmltopdf-amd64" : "*",
-        "raven/raven": "dev-master",
+        "raven/raven": "0.8.*@dev",
         "stof/doctrine-extensions-bundle": "1.2.*@dev",
         "phing/phing": "~2.9"
     },

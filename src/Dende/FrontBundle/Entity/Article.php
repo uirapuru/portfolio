@@ -148,5 +148,4 @@ class Article
     {
         $this->titlePl = $titlePl;
     }
-
 }

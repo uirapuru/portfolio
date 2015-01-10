@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Dende\FrontBundle\Menu;
 
@@ -76,7 +76,7 @@ class MenuBuilder extends ContainerAware
         
         $locale = $request->getLocale();
 
-        if(in_array($locale, array("pl","en","de","pt"))) {
+        if (in_array($locale, array("pl","en","de","pt"))) {
             $menu->getChild($locale)->setCurrent(true);
         }
 
