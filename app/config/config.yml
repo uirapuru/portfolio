@@ -31,47 +31,6 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
-# Assetic Configuration
-#assetic:
-#    debug:          "%kernel.debug%"
-#    use_controller: false
-#    bundles:
-#        - FrontBundle
-#    filters:
-#        cssrewrite: ~
-#        less:
-#            node: /usr/bin/nodejs
-#            node_paths: [/usr/local/lib/node_modules, %kernel.root_dir%/../bin/node_modules]
-#            apply_to: "\.less$"
-#        coffee:
-#            bin: %kernel.root_dir%/../bin/coffee
-#            node: /usr/bin/nodejs
-#            node_paths: [/usr/local/lib/node_modules, %kernel.root_dir%/../bin/node_modules]
-#            apply_to: "\.coffee$"
-#    assets:
-#        default_javascripts:
-#            input:
-#                - 'components/jquery/dist/jquery.min.js'
-#                - 'components/angular/angular.min.js'
-#                - 'components/angular-animate/angular-animate.min.js'
-#                - 'components/bootstrap/dist/js/bootstrap.min.js'
-#                - 'components/modernizr/modernizr.js'
-#                - 'components/prettyPhoto/js/jquery.prettyPhoto.js'
-#                - '@FrontBundle/Resources/coffee/main.coffee'
-#        default_stylesheets:
-#            input:
-#                - 'components/bootstrap/dist/css/bootstrap.min.css'
-#                - 'components/font-awesome/css/font-awesome.min.css'
-#                - 'components/flag-icon-css/css/flag-icon.min.css'
-#                - 'components/prettyPhoto/css/prettyPhoto.css'
-#                - 'bundles/front/less/main.less'
-#        download_stylesheets:
-#            input:
-#                - 'components/bootstrap/dist/css/bootstrap.min.css'
-#                - 'bundles/front/less/download.less'
-#
-
-
 # Doctrine Configuration
 doctrine:
     dbal:
