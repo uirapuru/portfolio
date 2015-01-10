@@ -256,8 +256,7 @@ class Job
     {
         $to = $this->getTo();
 
-        if($to === null)
-        {
+        if ($to === null) {
             $to = new \DateTime();
         }
 

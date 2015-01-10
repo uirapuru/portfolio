@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Project
 {
-   /**
+    /**
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -54,11 +54,6 @@ class Project
      * @var string $pictures
      */
     protected $description;
-
-    function __construct()
-    {
-        
-    }
 
     public function getName()
     {

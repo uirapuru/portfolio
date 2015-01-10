@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Dende\FrontBundle\Service\Listener;
 
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
