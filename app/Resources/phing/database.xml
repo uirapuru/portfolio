@@ -1,15 +1,6 @@
 <project name="portfolio.database" default="reset-db">
     <target name="reset-db">
 
-        <!--Prevents accidental resetting of prod db-->
-
-        <if>
-            <equals arg1="${env}" arg2="prod" />
-            <then>
-                <fail message="Cannot reset-db on prod environment!!!" />
-            </then>
-        </if>
-
         <!--User have to always set club property unless it's test environment-->
 
         <if>
@@ -22,14 +13,13 @@
             </then>
         </if>
 
-        <echo>Dropping database - ${env} environment</echo>
+        <echo>Dropping schema - ${env} environment</echo>
         <exec command="${php_bin} ${symfony_console} doctrine:schema:drop --em=default --env=${env} --force --no-interaction" checkreturn="false" passthru="true" />
 
         <echo>Creating new schema - ${env} environment</echo>
         <exec command="${php_bin} ${symfony_console} doctrine:schema:create --em=default --env=${env} --no-interaction" checkreturn="true" passthru="true" />
 
-        <echo>Loading fixtures - ${env} environment, default database</echo>
-        <exec command="${php_bin} ${symfony_console} doctrine:fixtures:load --no-interaction --em=default" checkreturn="true" passthru="true" />
-        <echo>Loading fixtures - ${env} environment, club "${club}" database</echo>
+        <echo>Loading fixtures - ${env} environment</echo>
+        <exec command="${php_bin} ${symfony_console} doctrine:fixtures:load --no-interaction --env=${env}" checkreturn="true" passthru="true" />
     </target>
 </project>
