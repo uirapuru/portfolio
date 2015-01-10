@@ -1,242 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Portfolio" default="build">
-    <target name="build" depends="install,assets" />
-    
-    <target name="metrics" depends="prepare,lint,phpunit,parallelTasks,phpcb" />
-    
-    <target name="parallelTasks" description="Run code analysis tasks in parallel">
-        <parallel threadCount="2">
-            <sequential>
-                <antcall target="pdepend"/>
-                <antcall target="phpmd"/>
-            </sequential>
-            <antcall target="phpcpd"/>
-            <antcall target="phpcs"/>
-            <antcall target="phpdoc"/>
-            <antcall target="phploc"/>
-        </parallel>
-    </target>
-    
-    <target name="install" description="Installs assets, components and node modules">
-        <antcall target="composer:install"/>
-        <antcall target="install:coffee"/>
-        <antcall target="install:less"/>
-        <antcall target="assets"/>
-        <copy file="${basedir}/web/app_dev.php" tofile="${basedir}/web/index.php" overwrite="true" />
+
+<project name="portfolio" default="prepare">
+    <import file="${project.basedir}/app/Resources/phing/properties.xml"/>
+    <import file="${project.basedir}/app/Resources/phing/database.xml"/>
+    <import file="${project.basedir}/app/Resources/phing/tests.xml"/>
+
+    <target name="clear-cache">
+        <echo>Clearing cache - ${env} environment</echo>
+        <exec command="${php_bin} ${symfony_console} cache:clear --env=#{env}" checkreturn="true" passthru="true" />
     </target>
 
-    <target name="phpcbf" description="php code beautifier and fixer">
-        <exec executable="bin/phpcbf" failonerror="true">
-            <arg value="-p" />
-            <arg value="--encoding=utf8" />
-            <arg value="--standard=app/phpcs.xml" />
-            <arg path="src/" />
+    <target name="cc">
+        <phingcall target="clear-cache" />
+    </target>
+
+    <target name="composer:download">
+        <exec executable="sh" passthru="true" checkreturn="true">
+            <arg value="-c 'curl -sS https://getcomposer.org/installer | php'" />
         </exec>
     </target>
-    
-    <target name="clean" description="Cleanup build artifacts">
-        <delete dir="${basedir}/build/api"/>
-        <delete dir="${basedir}/build/code-browser"/>
-        <delete dir="${basedir}/build/coverage"/>
-        <delete dir="${basedir}/build/logs"/>
-        <delete dir="${basedir}/build/pdepend"/>
-    </target>
-    
-    <target name="prepare" depends="clean,phpab,composer:install" description="Prepare for build">
-        <mkdir dir="${basedir}/build/api"/>
-        <mkdir dir="${basedir}/build/code-browser"/>
-        <mkdir dir="${basedir}/build/coverage"/>
-        <mkdir dir="${basedir}/build/logs"/>
-        <mkdir dir="${basedir}/build/pdepend"/>
-    </target>
-    <target name="phpab" description="Generate autoloader scripts">
-        <!-- ... -->
-    </target>
 
-    <target name="composer:install" description="Installs composer dependencies">
-        <exec executable="composer" failonerror="true">
+    <target name="composer:install" depends="composer:download">
+        <exec executable="#{composer}" passthru="true" checkreturn="true">
             <arg value="install" />
-            <arg value="--no-interaction" />
-            <arg value="--no-ansi" />
-            <arg value="--no-progress" />
+            <arg value="--env=#{env}" />
         </exec>
     </target>
 
-    <target name="bower:install" description="Installs javascripts components with bower">
-        <exec executable="bower" failonerror="true">
-            <arg value="install" />
-            <arg value="--q" />
-        </exec>
-    </target>
-
-    <target name="phpunit" description="Run unit tests with PHPUnit">
-        <exec executable="${basedir}/bin/phpunit" failonerror="true">
-            <arg value="-c" />
-            <arg path="${basedir}/app" />
-        </exec>
-    </target>
-    
-    <target name="lint">
-        <apply executable="php" failonerror="true">
-            <arg value="-l" />
-            <fileset dir="${basedir}/src">
-                <include name="**/*.php" />
-            </fileset>
-        </apply>
-    </target>
-    
-    <target name="phpdoc"
-            description="Generate API documentation using PHPDocumentor">
-        <exec executable="${basedir}/bin/phpdocmd">
-            <arg value="--directory" />
-            <arg path="${basedir}/src" />
-            <arg value="--target" />
-            <arg path="${basedir}/build/api" />
-        </exec>
-    </target>
-    
-    <target name="phploc" description="Measure project size using PHPLOC">
-        <exec executable="${basedir}/bin/phploc">
-            <arg value="--log-csv" />
-            <arg value="${basedir}/build/logs/phploc.csv" />
-            <arg path="${basedir}/src" />
-        </exec>
-    </target>
-
-    <target name="pdepend"
-            description="Calculate software metrics using PHP_Depend">
-        <exec executable="${basedir}/bin/pdepend">
-            <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
-            <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
-            <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-            <arg path="${basedir}/src" />
-        </exec>
-    </target>
-
-    <target name="phpcpd" description="Find duplicate code using PHPCPD">
-        <exec executable="${basedir}/bin/phpcpd">
-            <arg value="--log-pmd" />
-            <arg value="${basedir}/build/logs/pmd-cpd.xml" />
-            <arg path="${basedir}/src" />
-        </exec>
-    </target>
-
-    <target name="phpcs"
-            description="Find coding standard violations using PHP_CodeSniffer">
-        <exec executable="${basedir}/bin/phpcs" output="/dev/null">
-            <arg value="--report=checkstyle" />
-            <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
-            <arg value="--standard=${basedir}/app/phpcs.xml" />
-            <arg path="${basedir}/src" />
-        </exec>
-    </target>
-    <target name="phpmd"
-            description="Perform project mess detection using PHPMD">
-        <exec executable="${basedir}/bin/phpmd">
-            <arg path="${basedir}/src" />
-            <arg value="xml" />
-            <arg value="${basedir}/app/phpmd.xml" />
-            <arg value="--reportfile" />
-            <arg value="${basedir}/build/logs/pmd.xml" />
-        </exec>
-    </target>
-    
-    <target name="phpcb"
-            description="Aggregate tool output with PHP_CodeBrowser">
-        <exec executable="${basedir}/bin/phpcb">
-            <arg value="--log" />
-            <arg path="${basedir}/build/logs" />
-            <arg value="--source" />
-            <arg path="${basedir}/src" />
-            <arg value="--output" />
-            <arg path="${basedir}/build/code-browser" />
-        </exec>
-    </target>
-    
-    <target name="capifony:deploy" description="Deploys to server via capifony">
-        <exec executable="cap" failonerror="true">
-            <arg value="deploy" />
-        </exec>
-    </target>
-    <target name="capifony:assetic" description="Dumps assetic via capifony">
-        <exec executable="cap" failonerror="true">
-            <arg value="symfony:assetic:dump" />
-        </exec>
-    </target>
-    <target name="capifony:assets" description="Installs assets via capifony">
-        <exec executable="cap" failonerror="true">
-            <arg value="symfony:assets:install" />
-        </exec>
-    </target>
-    
-    <target name="capifony:bower:install" description="Installs bower via capifony">
-        <exec executable="cap" failonerror="true">
-            <arg value="bower:install" />
-        </exec>
-    </target>
-    
-    <target name="assets-via-capifony" description="Installs bower components and dumps assets via capifony">
-        <antcall target="capifony:bower:install"/>
-        <antcall target="capifony:assets"/>
-        <antcall target="capifony:assetic"/>
-    </target>
-    
-    <target name="symfony:cc" description="Clears cache">
-        <exec executable="php" failonerror="true">
-            <arg value="${basedir}/app/console" />
-            <arg value="cache:clear" />
-        </exec>
-    </target>
-    
-    <target name="clean-db" description="Drops, creates schema and loads fixtures">
-        <exec executable="php" failonerror="true">
-            <arg value="${basedir}/app/console" />
-            <arg value="doctrine:database:drop" />
-            <arg value="--force" />
-        </exec>
-        <exec executable="php" failonerror="true">
-            <arg value="${basedir}/app/console" />
-            <arg value="doctrine:database:create" />
-        </exec>
-        <exec executable="php" failonerror="true">
-            <arg value="${basedir}/app/console" />
-            <arg value="doctrine:schema:create" />
-            <arg value="--no-interaction" />
-        </exec>
-        <exec executable="php" failonerror="true">
-            <arg value="${basedir}/app/console" />
-            <arg value="doctrine:fixtures:load" />
-            <arg value="--no-interaction" />
-        </exec>
-    </target>
-    
-    <target name="assets" description="Installs and dumps all assets">
-        <exec executable="php" failonerror="true">
-            <arg value="${basedir}/app/console" />
-            <arg value="assets:install" />
-            <arg value="--symlink" />
-            <arg value="web/" />
-        </exec>
-        <antcall target="bower:install" />
-        <exec executable="php" failonerror="true">
-            <arg value="${basedir}/app/console" />
-            <arg value="assetic:dump" />
-        </exec>
-    </target>
-    
-    <target name="install:coffee" description="Installs coffeescript locally">
-        <exec executable="npm" failonerror="true">
-            <arg value="install" />
-            <arg value="coffee-script" />
-        </exec>
-        <symlink link="${basedir}/bin/coffee" resource="${basedir}/node_modules/coffee-script/bin/coffee" overwrite="true" />
-    </target>
-    
-    <target name="install:less" description="Installs less locally">
-        <exec executable="npm" failonerror="true">
-            <arg value="install" />
-            <arg value="less" />
-        </exec>
-    </target>
-    
 </project>

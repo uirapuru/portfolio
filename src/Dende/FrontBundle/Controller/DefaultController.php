@@ -29,7 +29,7 @@ class DefaultController extends Controller
      */
     public function projectsAction()
     {
-        $projects = $this->getDoctrine()->getManager()->getRepository("FrontBundle:Project")->findAll();        
+        $projects = $this->getDoctrine()->getManager()->getRepository("FrontBundle:Project")->findAll();
         
         return array(
             "projects" => $projects
@@ -97,7 +97,7 @@ class DefaultController extends Controller
         $request->setLocale($locale);
         $this->get('session')->set('_locale', $locale);
         return $this->redirect(
-            $request->headers->get('referer')    
+            $request->headers->get('referer')
         );
     }
     
@@ -110,7 +110,7 @@ class DefaultController extends Controller
      */
     public function getAsHtmlAction()
     {
-     return array();   
+        return array();
     }
     /**
      * @Route(

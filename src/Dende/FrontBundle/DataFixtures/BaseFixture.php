@@ -33,9 +33,9 @@ class BaseFixture extends AbstractFixture implements OrderedFixtureInterface
         return 1;
     }
 
-    public function insert()
+    public function insert($params)
     {
-        throw new \Exception("Must implement this method!");
+        return $params;
     }
     
     public function translateClassToFilename($object)
