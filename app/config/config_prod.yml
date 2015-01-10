@@ -31,5 +31,5 @@ monolog:
         level: error
     sentry:
         type:  raven
-        dsn:   'http://b1142cf3b8494ce298ca01e0b914a099:5572361eeeed451291a9345193ffb650@sentry.example.com/2'
+        dsn:   %sentry_backend_dsn%
         level: notice

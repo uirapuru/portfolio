@@ -22,3 +22,5 @@ parameters:
 
     delivery_address: uirapuruadg@gmail.com
     pdf_file_name: cv_grzegorz_kaszuba_%%locale%%.pdf
+
+    sentry_backend_dsn: http://b1142cf3b8494ce298ca01e0b914a099:5572361eeeed451291a9345193ffb650@sentry.uirapu.ru/2
