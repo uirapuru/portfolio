@@ -10,15 +10,15 @@ class BaseFixture extends AbstractFixture implements OrderedFixtureInterface
 {
     protected $manager;
     protected $fixtureFile;
-    
+
     public function load(ObjectManager $manager)
     {
         $this->manager = $manager;
-        
+
         $file = $this->translateClassToFilename($this);
-        
+
         $value = Yaml::parse(file_get_contents(__DIR__."/Yaml/".$file));
-        
+
         foreach ($value as $key => $params) {
             $object = $this->insert($params);
             $this->addReference($key, $object);
@@ -37,13 +37,13 @@ class BaseFixture extends AbstractFixture implements OrderedFixtureInterface
     {
         return $params;
     }
-    
+
     public function translateClassToFilename($object)
     {
         $classnameArray = explode("\\", get_class($object));
         $class = array_pop($classnameArray);
-        $filename = strtolower(substr($class, 0, strpos($class, "Data"))) . ".yml";
-        
+        $filename = strtolower(substr($class, 0, strpos($class, "Data"))).".yml";
+
         return $filename;
     }
 }
