@@ -29,3 +29,4 @@ parameters:
 
     sentry_backend_dsn:         ~
     sentry_backend_dsn_dev:     ~
+    doctrine.server_version: 5.5
