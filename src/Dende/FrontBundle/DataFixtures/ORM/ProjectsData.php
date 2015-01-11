@@ -15,25 +15,25 @@ class ProjectsData extends BaseFixture
     public function insert($params)
     {
         $project = new Project();
-                
+
         $project->setName($params["name"]);
-        
+
         if (isset($params["features"])) {
             $project->setFeatures($params["features"]);
         }
-        
+
         if (isset($params["tags"])) {
             $project->setTags($params["tags"]);
         }
-        
+
         if (isset($params["pictures"])) {
             $project->setPictures($params["pictures"]);
         }
-        
+
         if (isset($params["company"])) {
             $project->setCompany($params["company"]);
         }
-        
+
         if (isset($params["description"])) {
             $project->setDescription($params["description"]);
         }

@@ -30,3 +30,10 @@ parameters:
     sentry_backend_dsn:         ~
     sentry_backend_dsn_dev:     ~
     doctrine.server_version: 5.5
+
+    links_mail:     mailto:uirapuru@tlen.pl
+    links_fb:       https://www.facebook.com/grzegorz.kaszuba
+    links_li:       http://pl.linkedin.com/in/grzegorzkaszuba
+    links_gl:       http://goldenline.pl/
+    links_git:      http://github.com/uirapuru
+    links_yt:       http://youtube.com/uirapuruadg

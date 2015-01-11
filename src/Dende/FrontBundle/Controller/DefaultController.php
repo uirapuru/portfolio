@@ -19,6 +19,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $jobs = $this->getDoctrine()->getRepository("FrontBundle:Job")->findAll();
+
         return [
             "jobs" => $jobs
         ];
@@ -30,12 +31,12 @@ class DefaultController extends Controller
     public function projectsAction()
     {
         $projects = $this->getDoctrine()->getManager()->getRepository("FrontBundle:Project")->findAll();
-        
+
         return array(
-            "projects" => $projects
+            "projects" => $projects,
         );
     }
-    
+
     /**
      * @Route("/contact",name="contact")
      * @Method({"GET","POST"})
@@ -43,7 +44,7 @@ class DefaultController extends Controller
      */
     public function contactAction(Request $request)
     {
-        $form = $this->createForm(new ContactType);
+        $form = $this->createForm(new ContactType());
 
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
@@ -53,11 +54,11 @@ class DefaultController extends Controller
                     'notice',
                     $this->get("translator")->trans("contact.thank_you_message")
                 );
-                
+
                 $mailer = $this->get("mailer.contact");
                 $mailer->setParameters(array(
                     "message" => $form->get("message")->getData(),
-                    "email" => $form->get("email")->getData()
+                    "email" => $form->get("email")->getData(),
                 ));
                 $mailer->setFrom(
                     $form->get("email")->getData()
@@ -65,24 +66,24 @@ class DefaultController extends Controller
                 $mailer->sendMail();
             }
         }
-        
+
         return array(
-            "form" => $form->createView()
+            "form" => $form->createView(),
         );
     }
-    
+
     /**
      * @Template()
      */
     public function embeddedContactAction()
     {
-        $form = $this->createForm(new ContactType);
-        
+        $form = $this->createForm(new ContactType());
+
         return array(
-            "form" => $form->createView()
+            "form" => $form->createView(),
         );
     }
-    
+
     /**
      * @Route(
      *  "/language/{locale}",
@@ -96,11 +97,12 @@ class DefaultController extends Controller
     {
         $request->setLocale($locale);
         $this->get('session')->set('_locale', $locale);
+
         return $this->redirect(
             $request->headers->get('referer')
         );
     }
-    
+
     /**
      * @Route(
      *  "/download/cv.html",
@@ -136,7 +138,7 @@ class DefaultController extends Controller
             200,
             array(
                 'Content-Type'          => 'application/pdf',
-                'Content-Disposition'   => 'attachment; filename="'.$filename.'"'
+                'Content-Disposition'   => 'attachment; filename="'.$filename.'"',
             )
         );
     }

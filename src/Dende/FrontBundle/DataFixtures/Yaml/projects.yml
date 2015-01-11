@@ -10,7 +10,7 @@ gyman:
     pictures:
         - gyman.pl.png
 
-        
+
 cookie.com.pl:
     name: cookie.com.pl
     description: "Advertising on chocolate"
@@ -22,7 +22,7 @@ cookie.com.pl:
         - jQuery
     pictures:
         - cookie.com.pl.png
-        
+
 sallyyumeno.com:
     name: sallyyumeno.com
     description: "Foto and modelling agency"
@@ -36,12 +36,12 @@ sallyyumeno.com:
         - jQuery
     pictures:
         - sallyyumeno.com.png
-        
+
 thomascloud:
     name: thomascloudofficial.com
     description: DJ's portfolio
     features:
-        - text editor for static content 
+        - text editor for static content
         - events schedule
         - soundcloud integration
         - gallery and music file catalog
@@ -50,7 +50,7 @@ thomascloud:
         - jQuery
     pictures:
         - thomascloudofficial.com.png
-        
+
 toromedia:
     name: toromedia.pl
     description: Filming and post-production agency
@@ -61,7 +61,7 @@ toromedia:
         - jQuery
     pictures:
         - toromedia.pl.png
-        
+
 capoeiraapelido:
     name: capoeiraapelido.com
     description: Catalog of portuguese words and names with illustrations
@@ -70,7 +70,7 @@ capoeiraapelido:
         - jQuery
     pictures:
         - capoeiraapelido.com.png
-        
+
 portuga:
     name: portuga.pl
     description: Socially driven portuguese vocabulary
@@ -83,8 +83,8 @@ portuga:
         - jQuery
     pictures:
         - http://placehold.it/150x112
-        
-        
+
+
 drascar:
     name: drascar.pl
     description: A auto-parts dealer homepage
@@ -93,7 +93,7 @@ drascar:
         - jQuery
     pictures:
         - drascar.pl.png
-        
+
 lukasautohandel:
     name: lukasautohandel.de
     description: Car dealer homepage
@@ -104,7 +104,7 @@ lukasautohandel:
         - jQuery
     pictures:
         - lukasautohandel.de.png
-        
+
 mmanews:
     name: mmanews.pl
     description: One of the biggest polish news site on mma
@@ -114,7 +114,7 @@ mmanews:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
-        
+
 takedown:
     name: takedown.pl
     description: MMA gear online shop
@@ -124,7 +124,7 @@ takedown:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
-        
+
 docloud:
     name: docloud.pl
     description: Document sharing and selling platform
@@ -137,7 +137,7 @@ docloud:
         - jQuery
     pictures:
         - docloud.pl.png
-        
+
 studdin:
     name: studdin.com
     description: Site connecting student, companies and universities.
@@ -145,8 +145,8 @@ studdin:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
-        
-        
+
+
 movablemedia:
     name: movablemedia.com
     description: "Advertisement analytics for bloggers"
@@ -158,7 +158,7 @@ movablemedia:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
-        
+
 episodesconnect:
     name: episodesconnect.com
     description: "Patient managment program for hospitals and medical centers supporting U.S. Health Care Program"
@@ -167,7 +167,7 @@ episodesconnect:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
-        
+
 piwikpro:
     name: piwik.pro
     description: "Piwik Analytics in cloud and supporting services"
@@ -176,11 +176,11 @@ piwikpro:
         - http://placehold.it/150x112
         - http://placehold.it/150x112
         - http://placehold.it/150x112
-        
+
 pennysaverusa:
     name: pennysaverusa.com
     company: clearcode
-        
+
 stat24:
     name: stat24.com
     description: "Analytics System"

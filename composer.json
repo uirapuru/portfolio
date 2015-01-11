@@ -36,7 +36,8 @@
         "evert/phpdoc-md" : "*",
         "phploc/phploc" : "*",
         "phpmd/phpmd" : "*",
-        "pdepend/pdepend" : "*"
+        "pdepend/pdepend" : "*",
+        "fabpot/php-cs-fixer": "~1.3"
     },
     "scripts": {
         "post-root-package-install": [
