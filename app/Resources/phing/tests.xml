@@ -23,7 +23,7 @@
             <property name="env" value="test" />
         </phingcall>
         <echo>Running phpunit tests</echo>
-        <exec command="bin/phpunit -c app --testsuite=all" checkreturn="true" passthru="true" />
+        <exec command="bin/phpunit -c app" checkreturn="true" passthru="true" />
     </target>
 
     <target name="test-security">

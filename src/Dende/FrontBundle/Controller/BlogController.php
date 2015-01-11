@@ -7,10 +7,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Dende\FrontBundle\Form\ContactType;
 
 /**
  * Class BlogController
@@ -38,8 +34,6 @@ class BlogController extends Controller
      */
     public function showArticleAction(Article $article)
     {
-
-
         return [
             "article" => $article
         ];
