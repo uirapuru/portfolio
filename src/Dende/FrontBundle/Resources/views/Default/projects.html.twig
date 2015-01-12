@@ -10,18 +10,18 @@
     {% else %}
         {% set image = null %}
     {% endif %}
-    
+
     <a href="{{ image }}" {% if image is not null %}rel="prettyPhoto[project]"{% endif %}><img src="{{ image }}" /></a>
 {% endmacro %}
 
 {% macro project(project) %}
-                        
+
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
     <div class="panel panel-default">
         <div class="row padall">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 {{ _self.picture(project) }}
-                
+
                 {% if project.company is defined %}
                 <div class="label label-danger">{{ project.company }}</div>
                 {% endif %}
@@ -53,12 +53,12 @@
             </div>
         </div>
     </div>
-</div>    
+</div>
 {% endmacro %}
 
 {% block body %}
     {{ parent() }}
-     
+
     <div class="container">
         <div class="row">
             <div class="col-md-12" id="projects">
@@ -81,5 +81,3 @@
         });
     </script>
 {% endblock javascripts %}
-    
-    

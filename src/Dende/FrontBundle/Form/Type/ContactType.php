@@ -10,10 +10,9 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class ContactType extends AbstractType
 {
-
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -24,32 +23,32 @@ class ContactType extends AbstractType
                     "required" => true,
                     "constraints" => array(
                         new Email(array(
-                           "message" => "contact.wrong_email"
+                           "message" => "contact.wrong_email",
                         )),
                         new NotBlank(array(
-                            "message" => "contact.empty_email"
-                        ))
+                            "message" => "contact.empty_email",
+                        )),
                     ),
-                    "error_bubbling" => true
+                    "error_bubbling" => true,
                 ))
                 ->add('message', "textarea", array(
                     "label" => "contact.form.labels.message",
                     "required" => true,
                     "constraints" => array(
                         new NotBlank(array(
-                            "message" => 'contact.empty_message'
+                            "message" => 'contact.empty_message',
                         )),
                         new Length(array(
                             "min" => 10,
                             "minMessage" => 'contact.too_short_message',
                             "max" => 1000,
-                            "maxMessage" => 'contact.too_long_message'
+                            "maxMessage" => 'contact.too_long_message',
                         )),
                     ),
-                    "error_bubbling" => true
+                    "error_bubbling" => true,
                 ))
                 ->add('submit', "submit", array(
-                    "label" => 'contact.form.labels.submit'
+                    "label" => 'contact.form.labels.submit',
                 ))
         ;
     }

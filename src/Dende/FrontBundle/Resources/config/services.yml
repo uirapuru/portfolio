@@ -1,7 +1,10 @@
 services:
     front_bundle.menu_builder:
         class: Dende\FrontBundle\Menu\MenuBuilder
-        arguments: ["@knp_menu.factory"]
+        arguments:
+            - "@knp_menu.factory"
+        calls:
+            - [setSocialLinks, [%social_links%]]
 
     front_bundle.menu.lang:
         class: Knp\Menu\MenuItem
@@ -27,7 +30,7 @@ services:
         scope: request
         tags:
             - { name: knp_menu.menu, alias: socialMenu }
-            
+
     front_bundle.locale_listener:
         class: Dende\FrontBundle\Service\Listener\LocaleListener
         arguments: ["%kernel.default_locale%"]

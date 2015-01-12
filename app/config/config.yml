@@ -89,3 +89,12 @@ stof_doctrine_extensions:
     default:
       timestampable: true
       sluggable: true
+
+front:
+    links:
+        contact_mail:   %links_mail%
+        facebook:       %links_fb%
+        linkedin:       %links_li%
+        goldenline:     %links_gl%
+        github:         %links_git%
+        youtube:        %links_yt%

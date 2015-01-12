@@ -81,30 +81,35 @@ class Project
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     public function setTags(array $tags)
     {
         $this->tags = $tags;
+
         return $this;
     }
 
     public function setFeatures(array $features)
     {
         $this->features = $features;
+
         return $this;
     }
 
     public function setPictures(array $pictures)
     {
         $this->pictures = $pictures;
+
         return $this;
     }
 
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -116,6 +121,7 @@ class Project
     public function setCompany($company)
     {
         $this->company = $company;
+
         return $this;
     }
 }

@@ -7,7 +7,6 @@ namespace Dende\MailerBundle\Service;
  */
 class MailerTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Mailer
      */
@@ -30,7 +29,6 @@ class MailerTest extends \PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-
     }
 
     /**
@@ -48,14 +46,14 @@ class MailerTest extends \PHPUnit_Framework_TestCase
     public function testCall()
     {
         $this->mailer->sendMail();
-        
+
         try {
             $this->mailer->setDupaCycki();
         } catch (\BadMethodCallException $e) {
             $this->assertTrue(true);
         }
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="mocks">
 
     private function getMailerMock()
@@ -63,59 +61,58 @@ class MailerTest extends \PHPUnit_Framework_TestCase
         $mock = $this->getMockBuilder('\Swift_Mailer')
             ->disableOriginalConstructor()
             ->getMock();
-        
+
         $mock->expects($this->once())
             ->method("createMessage")
             ->will($this->returnValue($this->getMessageMock()));
 
         return $mock;
     }
-    
+
     private function getMessageMock()
     {
         $mock = $this->getMockBuilder('\Swift_Message')
             ->disableOriginalConstructor()
             ->getMock();
-        
+
         $mock->expects($this->once())
             ->method("getSubject")
             ->will($this->returnValue('message_subject'));
-        
+
         $mock->expects($this->once())
             ->method("setContentType")
             ->will($this->returnValue(null));
-        
+
         $mock->expects($this->once())
             ->method("setSubject")
             ->will($this->returnValue(null));
 
         return $mock;
     }
-    
+
     private function getTemplatingMock()
     {
         $mock = $this->getMockBuilder('Symfony\Bridge\Twig\TwigEngine')
             ->disableOriginalConstructor()
             ->getMock();
-        
+
         $mock->expects($this->once())
             ->method("render")
             ->will($this->returnValue('template_body'));
 
         return $mock;
     }
-    
+
     private function getTranslatorMock()
     {
         $mock = $this->getMockBuilder("\Symfony\Bundle\FrameworkBundle\Translation\Translator")
             ->disableOriginalConstructor()
             ->getMock();
-        
+
         $mock->expects($this->once())
             ->method("trans")
             ->will($this->returnValue('translated_text'));
 
         return $mock;
-        
     }// </editor-fold>
 }
