@@ -1,2 +1,3 @@
 $ ->
+  hljs.initHighlightingOnLoad()
 #  alert "test"

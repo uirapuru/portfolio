@@ -8,6 +8,7 @@ module.exports = function (grunt) {
         'bower_components/font-awesome/css/font-awesome.css',
         'bower_components/flag-icon-css/css/flag-icon.css',
         'bower_components/prettyPhoto/css/prettyPhoto.css',
+        'bower_components/highlight.js.origin/src/styles/default.css',
     ];
 
     var lessFiles = [
@@ -29,6 +30,9 @@ module.exports = function (grunt) {
         'bower_components/bootstrap/dist/js/bootstrap.min.js',
         'bower_components/modernizr/modernizr.js',
         'bower_components/prettyPhoto/js/jquery.prettyPhoto.js',
+        'bower_components/highlight.js.origin/src/highlight.js',
+        'bower_components/highlight.js.origin/src/languages/php.js',
+        'bower_components/highlight.js.origin/src/languages/javascript.js',
     ];
 
     var coffeeFiles = [
